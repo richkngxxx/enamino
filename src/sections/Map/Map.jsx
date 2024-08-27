@@ -76,11 +76,13 @@ export default function Map() {
                         <img src={treking} height={30} />
                     </Pin>
                 </AdvancedMarker>
+                <InfoWindow position={VillageDInyougou}>Inyougou</InfoWindow>
                 <AdvancedMarker position={VillageDeSounga}>
                     <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
                         <img src={treking} height={30} />
                     </Pin>
                 </AdvancedMarker>
+                <InfoWindow position={VillageDeSounga}>Sounga</InfoWindow>
                 <AdvancedMarker position={CampementDeBrousseDEnaminoAAkaka}>
                     <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
                         <img src={tent} height={30} />
