@@ -27,37 +27,29 @@ export default function Header() {
 
     return (
         <section className={style.container}>
-            {/* Show static image on mobile, video on desktop */}
-            {isMobile ? (
-                <div 
-                    className={style.mobileBackground}
-                    style={{ backgroundImage: `url(${logo})` }}
-                />
-            ) : (
-                <>
-                    {!videoLoaded && (
-                        <div className={style.videoLoading}>
-                            <div className={style.spinner}></div>
-                        </div>
-                    )}
-                    <video 
-                        className={`${style.video} ${videoLoaded ? style.videoLoaded : ''}`}
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        disablePictureInPicture
-                        disableRemotePlayback
-                        poster={logo}
-                        preload="metadata"
-                        onLoadedData={() => setVideoLoaded(true)}
-                        onError={(e) => console.error('Video error:', e)}
-                    >
-                        <source src={video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </>
+            {/* Video background for all devices */}
+            {!videoLoaded && (
+                <div className={style.videoLoading}>
+                    <div className={style.spinner}></div>
+                </div>
             )}
+            <video 
+                className={`${style.video} ${videoLoaded ? style.videoLoaded : ''}`}
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                disablePictureInPicture
+                disableRemotePlayback
+                poster={logo}
+                preload="auto"
+                onLoadedData={() => setVideoLoaded(true)}
+                onCanPlay={() => setVideoLoaded(true)}
+                onError={(e) => console.error('Video error:', e)}
+            >
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
             <div className={style.overlay}>
                 <div className={style.logo}>
                     <img src={logo} alt="Enamino Eco-Village Logo" />
