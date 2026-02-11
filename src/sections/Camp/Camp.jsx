@@ -35,34 +35,34 @@ export default function Camp() {
             </div>
             <Carousel>
                 <div>
-                    <img src={image1} />
+                    <img src={image1} alt="Camp Enamino - Vue panoramique" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image2} />
+                    <img src={image2} alt="Camp Enamino - Bungalows" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image3} />
+                    <img src={image3} alt="Camp Enamino - Restaurant" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image4} />
+                    <img src={image4} alt="Camp Enamino - Plage" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image5} />
+                    <img src={image5} alt="Camp Enamino - Nature" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image6} />
+                    <img src={image6} alt="Camp Enamino - Vue océan" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image7} />
+                    <img src={image7} alt="Camp Enamino - Environnement" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image8} />
+                    <img src={image8} alt="Camp Enamino - Faune" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image9} />
+                    <img src={image9} alt="Camp Enamino - Paysage" loading="lazy" />
                 </div>
                 <div>
-                    <img src={image10} />
+                    <img src={image10} alt="Camp Enamino - Safari" loading="lazy" />
                 </div>
             </Carousel>
         </section>

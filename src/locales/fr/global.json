@@ -317,7 +317,13 @@
         "message": "Message...",
         "send": "Envoyer",
         "messageOk": "Message envoyé avec succès",
-        "messageBad": "Une erreur s'est produite, veuillez réessayer."
+        "messageBad": "Une erreur s'est produite, veuillez réessayer.",
+        "mapTitle": "Localisation",
+        "mapSubtitle": "Cliquez sur un marqueur pour obtenir l'itinéraire",
+        "getDirections": "📍 Obtenir l'itinéraire",
+        "viewOnGoogleMaps": "👁️ Voir sur Google Maps",
+        "directionsFromEnamino": "📍 Itinéraire depuis Enamino",
+        "howToReach": "📍 Comment rejoindre Enamino"
     },
     "footer": {
         "linksTitle": "Plus de liens",
@@ -326,6 +332,6 @@
         "linkThree": "Les Carnets de Voyages de Jean Lou : Le Parc de LOANGO",
         "linkFour": "Notre vie au Gabon",
         "linkFive": "Video sur le Parc National de Loango (Gabon) - YouTube",
-        "developer": "Développé par Gastón Valentini"
+        "followUs": "Suivez-nous"
     }
 }

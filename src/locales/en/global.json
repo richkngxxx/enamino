@@ -317,6 +317,12 @@
         "message": "Message...",
         "send": "Send",
         "messageOk": "Message sent successfully",
+        "mapTitle": "Location",
+        "mapSubtitle": "Click on a marker to get directions",
+        "getDirections": "📍 Get directions",
+        "viewOnGoogleMaps": "👁️ View on Google Maps",
+        "directionsFromEnamino": "📍 Directions from Enamino",
+        "howToReach": "📍 How to reach Enamino",
         "messageBad": "An error occurred, please try again."
     },
     "footer": {
@@ -326,6 +332,6 @@
         "linkThree": "Jean Lou's Travel Journals: Loango Park",
         "linkFour": "Our Life in Gabon",
         "linkFive": "Video on Loango National Park (Gabon) - YouTube",
-        "developer": "Developed by Gastón Valentini"
+        "followUs": "Follow Us"
     }
 }

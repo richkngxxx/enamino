@@ -14,12 +14,24 @@ export default function Header() {
 
     return (
         <section className={style.container}>
-            <video className={style.video} autoPlay loop muted>
+            <video 
+                className={style.video} 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                disablePictureInPicture
+                disableRemotePlayback
+                poster={logo}
+                preload="auto"
+                onError={(e) => console.error('Video error:', e)}
+            >
                 <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
             </video>
             <div className={style.overlay}>
                 <div className={style.logo}>
-                    <img src={logo} alt="Logo" />
+                    <img src={logo} alt="Enamino Eco-Village Logo" />
                 </div>
                 <p className={style.slogan}>{t("header.slogan")}</p>
                 <p className={style.title}>L' Eco-Village d' Enamino</p>

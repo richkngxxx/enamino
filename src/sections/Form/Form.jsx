@@ -39,15 +39,13 @@ export default function Form() {
             )
             .then(
                 (result) => {
-                    console.log(result);
                     setConfirmMessage(200);
                     setTimeout(() => {
                         setConfirmMessage(0);
                     }, 3000);
                 },
                 (error) => {
-                    console.log(error);
-                    setConfirmMessage(200);
+                    setConfirmMessage(400);
                 }
             );
     };

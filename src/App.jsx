@@ -1,6 +1,7 @@
 import style from "./App.module.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import VillageView from "./views/VillageView/VillageView";
 import SafarisView from "./views/SafarisView/SafarisView";
 import GabonView from "./views/GabonView/GabonView";
@@ -21,6 +22,7 @@ export default function App() {
                     <Route path="/contact" element={<ContactView />} />
                 </Routes>
                 <Footer />
+                <ScrollToTop />
             </div>
         </Router>
     );

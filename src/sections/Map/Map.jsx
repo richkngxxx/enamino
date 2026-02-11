@@ -1,185 +1,186 @@
-import { APIProvider, Map as MapComponent, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react-google-maps";
-import position from "../../assets/images/position.png";
-import binoculars from "../../assets/images/binoculars.png";
-import church from "../../assets/images/church.png";
-import raft from "../../assets/images/raft.png";
-import river from "../../assets/images/river.png";
-import temple from "../../assets/images/temple.png";
-import tent from "../../assets/images/tent.png";
-import treking from "../../assets/images/treking.png";
+import { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { useTranslation } from 'react-i18next';
+import style from './Map.module.css';
+
+// Import marker icons
+import position from '../../assets/images/position.png';
+import binoculars from '../../assets/images/binoculars.png';
+import church from '../../assets/images/church.png';
+import raft from '../../assets/images/raft.png';
+import river from '../../assets/images/river.png';
+import temple from '../../assets/images/temple.png';
+import tent from '../../assets/images/tent.png';
+import treking from '../../assets/images/treking.png';
+
+// Fix Leaflet default icon issue
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41]
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
+
+// Create custom icon function
+const createCustomIcon = (imageUrl, size = 30) => {
+    return L.divIcon({
+        className: style.customMarker,
+        html: `<img src="${imageUrl}" style="width: ${size}px; height: auto;" alt="marker" />`,
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+        popupAnchor: [0, -size / 2]
+    });
+};
+
+// Function to open Google Maps directions
+const openGoogleMaps = (lat, lng, name) => {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place=${encodeURIComponent(name)}`;
+    window.open(url, '_blank');
+};
+
+// Function to open Google Maps for a location
+const openGoogleMapsLocation = (lat, lng) => {
+    const url = `https://www.google.com/maps?q=${lat},${lng}`;
+    window.open(url, '_blank');
+};
 
 export default function Map() {
-    const enamino = { lat: -1.7277, lng: 9.2535 };
-    const oboue = { lat: -1.5750275260912617, lng: 9.265210210782604 };
-    const ileEvengue = { lat: -1.6513040117066657, lng: 9.321858467199517 };
-    const LaMissionSainteAnne = { lat: -1.651168382134359, lng: 9.383606400684322 };
-    const RiviereEmpivie = { lat: -1.6698838340061741, lng: 9.416962213709047 };
-    const VillageDIguela = { lat: -1.849380852582346, lng: 9.372120842187 };
-    const ParcNationalDeLoango = { lat: -1.9868483319996164, lng: 9.42183777115863 };
-    const Yatuga = { lat: -1.9661651242933986, lng: 9.476959531617533 };
-    const EntreeDAkaka = { lat: -2.057438722640862, lng: 9.570107257975804 };
-    const VillageDInyougou = { lat: -2.2861384621856924, lng: 9.722699319509346 };
-    const VillageDeSounga = { lat: -2.390201764172304, lng: 9.731889977371498 };
-    const CampementDeBrousseDEnaminoAAkaka = { lat: -2.294659744657578, lng: 9.743751704890485 };
-    const point1 = { lat: -2.2861384621856926, lng: 9.722699319509346 };
-    const point2 = { lat: -2.2935715551847364, lng: 9.723355795070928 };
-    const point3 = { lat: -2.30100464818378, lng: 9.72401227063251 };
-    const point4 = { lat: -2.3084377411828236, lng: 9.724668746194093 };
-    const point5 = { lat: -2.3158708341818675, lng: 9.725325221755675 };
-    const point6 = { lat: -2.323303927180911, lng: 9.725981697317257 };
-    const point7 = { lat: -2.3307370201799547, lng: 9.72663817287884 };
-    const point8 = { lat: -2.3381701131789985, lng: 9.727294648440422 };
-    const point9 = { lat: -2.345603206178042, lng: 9.727951124002004 };
-    const point10 = { lat: -2.3530362991770857, lng: 9.728607599563587 };
-    const point11 = { lat: -2.360469392176129, lng: 9.729264075125169 };
-    const point12 = { lat: -2.367902485175173, lng: 9.729920550686751 };
-    const point13 = { lat: -2.3753355781742167, lng: 9.730577026248334 };
-    const point14 = { lat: -2.38276867117326, lng: 9.731233501809916 };
-    const point15 = { lat: -2.390201764172304, lng: 9.731889977371498 };
+    const { t } = useTranslation('global');
+    const [activeMarker, setActiveMarker] = useState(null);
+
+    // Locations
+    const enamino = { lat: -1.7277, lng: 9.2535, name: "L'Eco-Village d'Enamino", icon: position, size: 50 };
+    
+    const locations = [
+        { lat: -1.5750275260912617, lng: 9.265210210782604, name: "Omboué", icon: temple },
+        { lat: -1.6513040117066657, lng: 9.321858467199517, name: "Île Evengué", icon: treking },
+        { lat: -1.651168382134359, lng: 9.383606400684322, name: "La Mission Sainte Anne", icon: church },
+        { lat: -1.6698838340061741, lng: 9.416962213709047, name: "Rivière Empivie", icon: river },
+        { lat: -1.849380852582346, lng: 9.372120842187, name: "Village d'Iguela", icon: raft },
+        { lat: -1.9868483319996164, lng: 9.42183777115863, name: "Parc National de Loango", icon: binoculars },
+        { lat: -1.9661651242933986, lng: 9.476959531617533, name: "Yatuga", icon: binoculars },
+        { lat: -2.057438722640862, lng: 9.570107257975804, name: "Entrée d'Akaka", icon: binoculars },
+        { lat: -2.2861384621856924, lng: 9.722699319509346, name: "Village d'Inyougou", icon: treking },
+        { lat: -2.390201764172304, lng: 9.731889977371498, name: "Village de Sounga", icon: treking },
+        { lat: -2.294659744657578, lng: 9.743751704890485, name: "Campement Akaka", icon: tent },
+    ];
+
+    // Route points (just dots on the map)
+    const routePoints = [
+        { lat: -2.2861384621856926, lng: 9.722699319509346 },
+        { lat: -2.2935715551847364, lng: 9.723355795070928 },
+        { lat: -2.30100464818378, lng: 9.72401227063251 },
+        { lat: -2.3084377411828236, lng: 9.724668746194093 },
+        { lat: -2.3158708341818675, lng: 9.725325221755675 },
+        { lat: -2.323303927180911, lng: 9.725981697317257 },
+        { lat: -2.3307370201799547, lng: 9.72663817287884 },
+        { lat: -2.3381701131789985, lng: 9.727294648440422 },
+        { lat: -2.345603206178042, lng: 9.727951124002004 },
+        { lat: -2.3530362991770857, lng: 9.728607599563587 },
+        { lat: -2.360469392176129, lng: 9.729264075125169 },
+        { lat: -2.367902485175173, lng: 9.729920550686751 },
+        { lat: -2.3753355781742167, lng: 9.730577026248334 },
+        { lat: -2.38276867117326, lng: 9.731233501809916 },
+        { lat: -2.390201764172304, lng: 9.731889977371498 },
+    ];
 
     return (
-        <APIProvider apiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
-            <MapComponent style={{ width: "100%", height: "500px" }} defaultCenter={enamino} defaultZoom={9} mapId={import.meta.env.VITE_GOOGLE_MAP_ID}>
-                <AdvancedMarker position={enamino}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={position} height={50} />
-                    </Pin>
-                </AdvancedMarker>
-                <InfoWindow position={enamino}>L'Eco-Village d'Enamino</InfoWindow>
-                <AdvancedMarker position={oboue}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={temple} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={ileEvengue}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={treking} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={LaMissionSainteAnne}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={church} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={RiviereEmpivie}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={river} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={VillageDIguela}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={raft} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={ParcNationalDeLoango}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={binoculars} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={Yatuga}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={binoculars} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={EntreeDAkaka}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={binoculars} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={VillageDInyougou}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={treking} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <InfoWindow position={VillageDInyougou}>Inyougou</InfoWindow>
-                <AdvancedMarker position={VillageDeSounga}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={treking} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <InfoWindow position={VillageDeSounga}>Sounga</InfoWindow>
-                <AdvancedMarker position={CampementDeBrousseDEnaminoAAkaka}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={tent} height={30} />
-                    </Pin>
-                </AdvancedMarker>
-                <InfoWindow position={CampementDeBrousseDEnaminoAAkaka}>Campament Akaka</InfoWindow>
-                <AdvancedMarker position={point1}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point2}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point3}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point4}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point5}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point6}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point7}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point8}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point9}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point10}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point11}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point12}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point13}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point14}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-                <AdvancedMarker position={point15}>
-                    <Pin background={"rgba(0,0,0,0)"} borderColor={"rgba(0,0,0,0)"} glyphColor={"rgba(0,0,0,0)"}>
-                        <img src={"https://images.vexels.com/content/139158/preview/black-dot-0ff1f3.png"} height={5} />
-                    </Pin>
-                </AdvancedMarker>
-            </MapComponent>
-        </APIProvider>
+        <section className={style.container}>
+            <div className={style.header}>
+                <h2 className={style.title}>{t('contact.mapTitle')}</h2>
+                <p className={style.subtitle}>{t('contact.mapSubtitle')}</p>
+            </div>
+            
+            <MapContainer
+                center={[enamino.lat, enamino.lng]}
+                zoom={9}
+                scrollWheelZoom={false}
+                className={style.map}
+            >
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+
+                {/* Main Enamino Marker */}
+                <Marker
+                    position={[enamino.lat, enamino.lng]}
+                    icon={createCustomIcon(enamino.icon, enamino.size)}
+                    eventHandlers={{
+                        click: () => setActiveMarker(enamino),
+                    }}
+                >
+                    <Popup>
+                        <div className={style.popup}>
+                            <h3>{enamino.name}</h3>
+                            <button 
+                                className={style.directionsBtn}
+                                onClick={() => openGoogleMaps(enamino.lat, enamino.lng, enamino.name)}
+                            >
+                                {t('contact.getDirections')}
+                            </button>
+                        </div>
+                    </Popup>
+                </Marker>
+
+                {/* Other Locations */}
+                {locations.map((loc, index) => (
+                    <Marker
+                        key={index}
+                        position={[loc.lat, loc.lng]}
+                        icon={createCustomIcon(loc.icon, 30)}
+                        eventHandlers={{
+                            click: () => setActiveMarker(loc),
+                        }}
+                    >
+                        <Popup>
+                            <div className={style.popup}>
+                                <h3>{loc.name}</h3>
+                                <button 
+                                    className={style.directionsBtn}
+                                    onClick={() => openGoogleMaps(loc.lat, loc.lng, loc.name)}
+                                >
+                                    {t('contact.directionsFromEnamino')}
+                                </button>
+                                <button 
+                                    className={style.viewBtn}
+                                    onClick={() => openGoogleMapsLocation(loc.lat, loc.lng)}
+                                >
+                                    {t('contact.viewOnGoogleMaps')}
+                                </button>
+                            </div>
+                        </Popup>
+                    </Marker>
+                ))}
+
+                {/* Route Points (small dots) */}
+                {routePoints.map((point, index) => (
+                    <Marker
+                        key={`point-${index}`}
+                        position={[point.lat, point.lng]}
+                        icon={L.divIcon({
+                            className: style.routePoint,
+                            iconSize: [8, 8]
+                        })}
+                    />
+                ))}
+            </MapContainer>
+
+            <div className={style.info}>
+                <button 
+                    className={style.mainDirectionsBtn}
+                    onClick={() => openGoogleMaps(enamino.lat, enamino.lng, enamino.name)}
+                >
+                    {t('contact.howToReach')}
+                </button>
+            </div>
+        </section>
     );
 }

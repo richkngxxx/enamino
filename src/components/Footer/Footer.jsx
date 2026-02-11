@@ -1,7 +1,7 @@
 import style from "./Footer.module.css";
 import { useTranslation } from "react-i18next";
 import logo from "../../assets/images/logo-complete.png";
-import { FaHome, FaUser, FaPhone, FaLinkedin } from "react-icons/fa";
+import { FaHome, FaUser, FaPhone, FaInstagram, FaFacebook } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <section className={style.container}>
             <div className={style.logo}>
-                <img src={logo} />
+                <img src={logo} alt="Enamino Logo" loading="lazy" />
             </div>
             <ul className={style.data}>
                 <li className={style.dataElement}>
@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
             <div className={style.widget}>
                 <a href="https://www.petitfute.com/v56217-parc-national-de-loango/c1166-hebergement/c158-hotel/342697-l-eco-village-d-enamino.html" target="_blank">
-                    <img src="https://www.petitfute.com/img/widget/logo.jpg" />
+                    <img src="https://www.petitfute.com/img/widget/logo.jpg" alt="Petit Futé" loading="lazy" />
                 </a>
             </div>
             <div className={style.links}>
@@ -67,15 +67,16 @@ export default function Footer() {
                 </ul>
             </div>
             <script language="javascript" type="text/javascript" src="https://pro.petitfute.com/compte/widget/etablissement/337595/src/1/"></script>
-            <div className={style.developer}>
-                <p className={style.developerText}>{t("footer.developer")}</p>
-                <div className={style.developerIcons}>
-                    <a href="https://www.linkedin.com/in/gastonvalentini/" target="_blank" className={style.developerIcon}>
-                        <FaLinkedin />
+            <div className={style.social}>
+                <p className={style.socialTitle}>{t("footer.followUs")}</p>
+                <div className={style.socialIcons}>
+                    <a href="https://www.instagram.com/nathalie.experience?utm_source=qr&igsh=Y3Z1b2NqdXoyeGty" target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
+                        <FaInstagram />
                     </a>
-                    <a href="https://www.gastonvalentini.com/" target="_blank" className={style.developerIcon}>
-                        <FaUser />
+                    <a href="https://www.facebook.com/share/1CzzPiSjoy/" target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
+                        <FaFacebook />
                     </a>
+
                 </div>
             </div>
         </section>

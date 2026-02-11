@@ -26,16 +26,16 @@ export default function Menu() {
                 </ul>
                 <div className={style.dataImages}>
                     <div className={style.dataImagesImage}>
-                        <img src={imageOne} />
+                        <img src={imageOne} alt="Cuisine locale - Spécialités gabonaises" loading="lazy" />
                     </div>
                     <div className={style.dataImagesImage}>
-                        <img src={imageTwo} />
+                        <img src={imageTwo} alt="Poisson frais pêché sur place" loading="lazy" />
                     </div>
                     <div className={style.dataImagesImage}>
-                        <img src={imageThree} />
+                        <img src={imageThree} alt="Fruits frais du potager" loading="lazy" />
                     </div>
                     <div className={style.dataImagesImage}>
-                        <img src={imageFour} />
+                        <img src={imageFour} alt="Dîner traditionnel au camp" loading="lazy" />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import style from "./Navbar.module.css";
 import { useTranslation } from "react-i18next";
 import logo from "../../assets/images/logo.png";
-import { FaSafari } from "react-icons/fa6";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import franceFlag from "../../assets/images/flag-france.jpg";
 import spainFlag from "../../assets/images/flag-spain.jpg";
@@ -26,10 +26,12 @@ export default function Navbar() {
 
     return (
         <section className={style.container}>
-            <div className={style.logo}>
-                <img src={logo} />
-            </div>
-            <FaSafari className={style.switch} onClick={handleMenu} />
+            <Link to="/" className={style.logo} onClick={() => window.scrollTo(0, 0)}>
+                <img src={logo} alt="Enamino Logo" loading="lazy" />
+            </Link>
+            <button className={style.switch} onClick={handleMenu} aria-label="Toggle menu">
+                {menuMobile ? <FaTimes /> : <FaBars />}
+            </button>
             <ul className={menuMobile ? `${style.links}` : `${style.links} ${style.linksMobile}`}>
                 <li className={style.linksLink}>
                     <Link to="/" onClick={handleMenu}>
@@ -60,17 +62,17 @@ export default function Navbar() {
             <div className={menuMobile ? `${style.language}` : `${style.language} ${style.languageMobile}`}>
                 {language === "fr" && (
                     <div className={style.languageFlag}>
-                        <img src={franceFlag} />
+                        <img src={franceFlag} alt="French Flag" loading="lazy" />
                     </div>
                 )}
                 {language === "es" && (
                     <div className={style.languageFlag}>
-                        <img src={spainFlag} />
+                        <img src={spainFlag} alt="Spanish Flag" loading="lazy" />
                     </div>
                 )}
                 {language === "en" && (
                     <div className={style.languageFlag}>
-                        <img src={usaFlag} />
+                        <img src={usaFlag} alt="USA Flag" loading="lazy" />
                     </div>
                 )}
                 <select className={style.languageSelector} onChange={(e) => handleLanguage(e)}>
