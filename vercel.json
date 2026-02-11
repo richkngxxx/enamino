@@ -1,8 +1,20 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/((?!assets|icons|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg|.*\\.ico|.*\\.json|.*\\.txt|.*\\.xml).+)",
-      "destination": "/"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/icons/(.*)",
+      "dest": "/icons/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|svg|ico|json|txt|xml|mp4|mp3|webm|woff|woff2|ttf|eot))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
