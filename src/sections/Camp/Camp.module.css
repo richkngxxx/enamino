@@ -37,19 +37,23 @@
 
 .dataInfoButton {
     align-self: flex-start;
-    padding: 10px;
+    padding: 12px 24px;
     text-decoration: none;
-    font-weight: 600;
-    color: var(--white);
-    background-color: var(--brown);
+    font-weight: 700;
+    color: var(--brown);
+    background-color: var(--green);
     border: 2px solid var(--green);
+    border-radius: 4px;
     transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .dataInfoButton:hover {
     cursor: pointer;
-    color: var(--brown);
-    background-color: var(--green);
+    color: var(--white);
+    background-color: var(--brown);
+    border-color: var(--brown);
 }
 
 @media (max-width: 1024px) {

@@ -21,7 +21,7 @@
         "textTwo": "Idéalement situé dans le massif forestier du Bassin du Congo (2ème poumon de la planète), sur l’équateur africain, blotti entre l’océan Atlantique et la forêt pluviale équatoriale. ",
         "link": "L'Eco-Village d'Enamino se trouve en brousse ",
         "textThree": "à mi-distance entre Omboué et le célèbre Parc National de Loango (30mn en 4x4). Notre camp ECOLOGIQUE bénéficie d’un magnifique site stratégique pour la réalisation de safaris de choix. Nos activités : SAFARI, BIVOUAC EN BROUSSE, EXCURSION TOURISTIQUE, PÊCHE SPORTIVE.",
-        "button": "Contactez-nous"
+        "button": "Réserver"
     },
     "bungalow": {
         "title": "LOGEMENT en BUNGALOW ou en TENTE",
@@ -324,6 +324,12 @@
         "viewOnGoogleMaps": "👁️ Voir sur Google Maps",
         "directionsFromEnamino": "📍 Itinéraire depuis Enamino",
         "howToReach": "📍 Comment rejoindre Enamino"
+    },
+    "cta": {
+        "defaultText": "Prêt à vivre la magie du Gabon? Réservez votre séjour maintenant!",
+        "afterCamp": "Vous voulez séjourner dans notre éco-camp? Réservez votre place aujourd'hui!",
+        "afterBungalow": "Vivez un hébergement authentique au cœur de la nature!",
+        "afterMenu": "Goûtez aux délicieuses saveurs locales du Gabon!"
     },
     "footer": {
         "linksTitle": "Plus de liens",

@@ -21,7 +21,7 @@
         "textTwo": "Ideally situated in the Congo Basin rainforest (the world’s second lung) on the African equator, nestled between the Atlantic Ocean and the equatorial rainforest.",
         "link": "Enamino Eco-Village is located in the bush ",
         "textThree": "halfway between Omboué and the famous Loango National Park (30 minutes by 4x4). Our ECOLOGICAL camp enjoys a magnificent strategic site for top-notch safaris. Our activities: SAFARI, BUSH BIVOUAC, TOURIST EXCURSION, SPORT FISHING.",
-        "button": "Contact Us"
+        "button": "Book Now"
     },
     "bungalow": {
         "title": "LODGING in BUNGALOW or TENT",
@@ -324,6 +324,12 @@
         "directionsFromEnamino": "📍 Directions from Enamino",
         "howToReach": "📍 How to reach Enamino",
         "messageBad": "An error occurred, please try again."
+    },
+    "cta": {
+        "defaultText": "Ready to experience the magic of Gabon? Book your stay now!",
+        "afterCamp": "Want to stay in our eco-camp? Reserve your spot today!",
+        "afterBungalow": "Experience authentic accommodation in the heart of nature!",
+        "afterMenu": "Taste the delicious local flavors of Gabon!"
     },
     "footer": {
         "linksTitle": "More links",

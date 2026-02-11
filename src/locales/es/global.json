@@ -21,7 +21,7 @@
         "textTwo": "Idealmente situado en el macizo forestal de la Cuenca del Congo (el segundo pulmón del planeta), en el ecuador africano, entre el océano Atlántico y la selva tropical ecuatorial.",
         "link": "El Eco-Village d'Enamino está situado en la selva ",
         "textThree": "a medio camino entre Omboué y el famoso Parque Nacional de Loango (a 30 minutos en 4x4). Nuestro campamento ECOLÓGICO disfruta de un magnífico emplazamiento estratégico para realizar safaris excepcionales. Nuestras actividades: SAFARI, CAMPAMENTO EN LA SELVA, EXCURSIONES TURÍSTICAS, PESCA DEPORTIVA.",
-        "button": "Contáctenos"
+        "button": "Reservar"
     },
     "bungalow": {
         "title": "ALOJAMIENTO EN BUNGALOW O TIENDA DE CAMPANA",
@@ -324,6 +324,12 @@
         "directionsFromEnamino": "📍 Indicaciones desde Enamino",
         "howToReach": "📍 Cómo llegar a Enamino",
         "messageBad": "Se produjo un error, por favor inténtalo de nuevo."
+    },
+    "cta": {
+        "defaultText": "¿Listo para vivir la magia de Gabón? ¡Reserva tu estancia ahora!",
+        "afterCamp": "¿Quieres alojarte en nuestro eco-campamento? ¡Reserva tu plaza hoy!",
+        "afterBungalow": "¡Experimenta el alojamiento auténtico en el corazón de la naturaleza!",
+        "afterMenu": "¡Prueba los deliciosos sabores locales de Gabón!"
     },
     "footer": {
         "linksTitle": "Más enlaces",

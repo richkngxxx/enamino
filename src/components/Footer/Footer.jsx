@@ -6,6 +6,30 @@ import { MdAlternateEmail } from "react-icons/md";
 
 export default function Footer() {
     const [t, i18n] = useTranslation("global");
+    
+    // Get current language
+    const currentLang = i18n.language;
+    
+    // Social media links based on language
+    const socialLinks = {
+        // Spanish - Nathalie's social media
+        es: {
+            instagram: "https://www.instagram.com/nathalie.experience?utm_source=qr&igsh=Y3Z1b2NqdXoyeGty",
+            facebook: "https://www.facebook.com/share/1CzzPiSjoy/"
+        },
+        // French - Enamino's social media (TODO: Add correct links)
+        fr: {
+            instagram: "https://www.instagram.com/enamino", // Replace with actual link
+            facebook: "https://www.facebook.com/enamino" // Replace with actual link
+        },
+        // English - default to Nathalie's
+        en: {
+            instagram: "https://www.instagram.com/nathalie.experience?utm_source=qr&igsh=Y3Z1b2NqdXoyeGty",
+            facebook: "https://www.facebook.com/share/1CzzPiSjoy/"
+        }
+    };
+    
+    const currentSocial = socialLinks[currentLang] || socialLinks.en;
 
     return (
         <section className={style.container}>
@@ -70,10 +94,10 @@ export default function Footer() {
             <div className={style.social}>
                 <p className={style.socialTitle}>{t("footer.followUs")}</p>
                 <div className={style.socialIcons}>
-                    <a href="https://www.instagram.com/nathalie.experience?utm_source=qr&igsh=Y3Z1b2NqdXoyeGty" target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
+                    <a href={currentSocial.instagram} target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
                         <FaInstagram />
                     </a>
-                    <a href="https://www.facebook.com/share/1CzzPiSjoy/" target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
+                    <a href={currentSocial.facebook} target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
                         <FaFacebook />
                     </a>
 
