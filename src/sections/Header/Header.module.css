@@ -114,17 +114,27 @@
 }
 
 .audio {
-    padding: 10px;
-    color: var(--white);
-    background-color: transparent;
-    border: 1px solid var(--white);
+    padding: 12px 24px;
+    color: var(--brown);
+    background-color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .audio:hover {
-    cursor: pointer;
-    color: var(--brown);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--brown);
+    border-color: var(--brown);
+    transform: scale(1.05);
 }
 
 @media (max-width: 834px) {
