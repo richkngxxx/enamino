@@ -9,4 +9,7 @@ export default defineConfig({
     port: 5173,
     strictPort: false,  // Try next port if 5173 is taken
   },
+  build: {
+    chunkSizeWarningLimit: 1000, // Increase limit to 1000KB to suppress warning
+  },
 })
