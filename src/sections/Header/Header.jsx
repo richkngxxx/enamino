@@ -27,14 +27,14 @@ export default function Header() {
 
     return (
         <section className={style.container}>
-            {/* Video background for all devices */}
-            {!videoLoaded && (
-                <div className={style.videoLoading}>
-                    <div className={style.spinner}></div>
-                </div>
-            )}
+            {/* Loading overlay - shows until video is ready */}
+            <div className={`${style.videoLoading} ${videoLoaded ? style.hidden : ''}`}>
+                <div className={style.spinner}></div>
+            </div>
+            
+            {/* Video background - always render */}
             <video 
-                className={`${style.video} ${videoLoaded ? style.videoLoaded : ''}`}
+                className={style.video}
                 autoPlay 
                 loop 
                 muted 
@@ -45,7 +45,11 @@ export default function Header() {
                 preload="auto"
                 onLoadedData={() => setVideoLoaded(true)}
                 onCanPlay={() => setVideoLoaded(true)}
-                onError={(e) => console.error('Video error:', e)}
+                onPlaying={() => setVideoLoaded(true)}
+                onError={(e) => {
+                    console.error('Video error:', e);
+                    setVideoLoaded(true); // Hide spinner even if video fails
+                }}
             >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.

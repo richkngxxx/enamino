@@ -21,24 +21,10 @@
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
+    opacity: 1; /* Show video immediately */
 }
 
-/* Mobile background - static image for better performance */
-.mobileBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
-    opacity: 0.3; /* Make it subtle like the video */
-    filter: blur(2px);
-}
-
-/* Video loading state */
+/* Video loading state - shown while video loads */
 .videoLoading {
     position: absolute;
     top: 0;
@@ -48,8 +34,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--brown);
-    z-index: 0;
+    background: linear-gradient(135deg, var(--brown) 0%, #1a1410 100%);
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.videoLoading.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .spinner {
@@ -57,21 +49,12 @@
     height: 50px;
     border: 3px solid rgba(255,255,255,0.3);
     border-radius: 50%;
-    border-top-color: var(--white);
+    border-top-color: var(--green);
     animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
     to { transform: rotate(360deg); }
-}
-
-.video {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.videoLoaded {
-    opacity: 1;
 }
 
 .overlay {
