@@ -59,3 +59,4 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+// Redeploy trigger: Thu Feb 12 00:54:46 CET 2026
