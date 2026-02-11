@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 export default function Header() {
     const { t } = useTranslation("global");
     const [isMobile, setIsMobile] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
 
     useEffect(() => {
         // Detect mobile devices
@@ -33,21 +34,29 @@ export default function Header() {
                     style={{ backgroundImage: `url(${logo})` }}
                 />
             ) : (
-                <video 
-                    className={style.video} 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    disablePictureInPicture
-                    disableRemotePlayback
-                    poster={logo}
-                    preload="auto"
-                    onError={(e) => console.error('Video error:', e)}
-                >
-                    <source src={video} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+                <>
+                    {!videoLoaded && (
+                        <div className={style.videoLoading}>
+                            <div className={style.spinner}></div>
+                        </div>
+                    )}
+                    <video 
+                        className={`${style.video} ${videoLoaded ? style.videoLoaded : ''}`}
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        disablePictureInPicture
+                        disableRemotePlayback
+                        poster={logo}
+                        preload="metadata"
+                        onLoadedData={() => setVideoLoaded(true)}
+                        onError={(e) => console.error('Video error:', e)}
+                    >
+                        <source src={video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </>
             )}
             <div className={style.overlay}>
                 <div className={style.logo}>

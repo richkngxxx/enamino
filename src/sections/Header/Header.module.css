@@ -38,6 +38,42 @@
     filter: blur(2px);
 }
 
+/* Video loading state */
+.videoLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brown);
+    z-index: 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: var(--white);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.video {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.videoLoaded {
+    opacity: 1;
+}
+
 .overlay {
     position: relative;
     z-index: 1;
