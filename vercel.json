@@ -1,8 +1,8 @@
 {
-    "rewrites": [
-        {
-            "source": "/:path*",
-            "destination": "/"
-        }
-    ]
+  "rewrites": [
+    {
+      "source": "/((?!assets|icons|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg|.*\\.ico|.*\\.json|.*\\.txt|.*\\.xml).+)",
+      "destination": "/"
+    }
+  ]
 }
