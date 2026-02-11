@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { MdAlternateEmail } from "react-icons/md";
 import { FaUser, FaMessage } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 
 export default function Form() {
     const { t } = useTranslation("global");
@@ -16,6 +15,7 @@ export default function Form() {
     const formRef = useRef(null);
 
     const [confirmMessage, setConfirmMessage] = useState(0);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const [canSubmit, setCanSubmit] = useState(false);
 
@@ -27,32 +27,38 @@ export default function Form() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
-        emailjs
-            .sendForm(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                formRef.current,
-                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            )
-            .then(
-                (result) => {
-                    setConfirmMessage(200);
-                    setTimeout(() => {
-                        setConfirmMessage(0);
-                    }, 3000);
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-                (error) => {
-                    setConfirmMessage(400);
-                }
-            );
+                body: JSON.stringify(form),
+            });
+
+            if (response.ok) {
+                setConfirmMessage(200);
+                setForm({ name: "", email: "", message: "" });
+            } else {
+                setConfirmMessage(400);
+            }
+        } catch (error) {
+            setConfirmMessage(400);
+        } finally {
+            setIsSubmitting(false);
+            setTimeout(() => {
+                setConfirmMessage(0);
+            }, 3000);
+        }
     };
 
     useEffect(() => {
-        setCanSubmit(Object.values(form).every((value) => value !== ""));
-    }, [form]);
+        setCanSubmit(Object.values(form).every((value) => value !== "") && !isSubmitting);
+    }, [form, isSubmitting]);
 
     return (
         <section className={style.container}>
@@ -68,6 +74,7 @@ export default function Form() {
                         placeholder={t("contact.name")}
                         className={style.formSectionInput}
                         onChange={(e) => handleChange(e)}
+                        value={form.name}
                     />
                 </div>
                 <div className={style.formSection}>
@@ -80,6 +87,7 @@ export default function Form() {
                         placeholder={t("contact.email")}
                         className={style.formSectionInput}
                         onChange={(e) => handleChange(e)}
+                        value={form.email}
                     />
                 </div>
                 <div className={style.formSection}>
@@ -91,9 +99,15 @@ export default function Form() {
                         placeholder={t("contact.message")}
                         className={style.formSectionInput}
                         onChange={(e) => handleChange(e)}
+                        value={form.message}
                     />
                 </div>
-                <input type="submit" value={t("contact.send")} disabled={!canSubmit} className={style.formSubmit} />
+                <input 
+                    type="submit" 
+                    value={isSubmitting ? "Envoi..." : t("contact.send")} 
+                    disabled={!canSubmit} 
+                    className={style.formSubmit} 
+                />
                 {confirmMessage === 200 && <p className={style.formMessageOk}>{t("contact.messageOk")}</p>}
                 {confirmMessage === 400 && <p className={style.formMessageBad}>{t("contact.messageBad")}</p>}
             </form>
