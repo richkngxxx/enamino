@@ -17,10 +17,10 @@ export default function Footer() {
             instagram: "https://www.instagram.com/nathalie.experience?utm_source=qr&igsh=Y3Z1b2NqdXoyeGty",
             facebook: "https://www.facebook.com/share/1CzzPiSjoy/"
         },
-        // French - Enamino's social media (TODO: Add correct links)
+        // French - Enamino's social media
         fr: {
-            instagram: "https://www.instagram.com/enamino", // Replace with actual link
-            facebook: "https://www.facebook.com/enamino" // Replace with actual link
+            instagram: "https://www.instagram.com/ecovillage_enamino?igsh=dGpoN3J1aW1kMWlu",
+            facebook: "https://www.facebook.com/share/1AeY6a2bXg/"
         },
         // English - default to Nathalie's
         en: {
