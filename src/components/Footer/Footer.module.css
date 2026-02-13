@@ -37,26 +37,6 @@
     color: var(--green);
 }
 
-.whatsappButton {
-    padding: 8px 16px;
-    background-color: var(--brown);
-    color: var(--green) !important;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 2px solid var(--brown);
-}
-
-.whatsappButton:hover {
-    background-color: var(--green);
-    color: var(--brown) !important;
-    transform: scale(1.05);
-}
-
 .widget {
     display: flex;
     justify-content: center;
