@@ -4,13 +4,18 @@ import App from "./App.jsx";
 import "./index.css";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 import frLocale from "./locales/fr/global.json";
 import esLocale from "./locales/es/global.json";
 import enLocale from "./locales/en/global.json";
 
-i18next.init({
+i18next.use(LanguageDetector).init({
     interpolation: { escapeValue: false },
-    lng: "fr",
+    fallbackLng: "fr",
+    detection: {
+        order: ['localStorage', 'navigator', 'htmlTag'],
+        caches: ['localStorage'],
+    },
     resources: {
         fr: {
             global: frLocale,

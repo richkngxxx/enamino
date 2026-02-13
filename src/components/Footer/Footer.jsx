@@ -1,7 +1,7 @@
 import style from "./Footer.module.css";
 import { useTranslation } from "react-i18next";
 import logo from "../../assets/images/logo-complete.png";
-import { FaHome, FaUser, FaPhone, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaHome, FaUser, FaPhone, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 
 export default function Footer() {
@@ -46,8 +46,15 @@ export default function Footer() {
                     <p>Nathalie CARRIÈRE (Nanou)</p>
                 </li>
                 <li className={style.dataElement}>
-                    <FaPhone />
-                    <p>WhatsApp +34686067814</p>
+                    <FaWhatsapp />
+                    <a 
+                        href={`https://wa.me/34686067814?text=${encodeURIComponent(t("footer.whatsappMessage"))}`}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={style.whatsappButton}
+                    >
+                        WhatsApp
+                    </a>
                 </li>
 
                 <li className={style.dataElement}>
