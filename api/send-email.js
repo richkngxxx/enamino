@@ -14,17 +14,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Create transporter with IONOS SMTP settings
+    // Create transporter with Gmail SMTP settings
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.ionos.com',
-      port: parseInt(process.env.SMTP_PORT) || 587,
-      secure: false, // true for 465, false for other ports
+      service: 'gmail',
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
-      },
-      tls: {
-        rejectUnauthorized: false,
       },
     });
 
