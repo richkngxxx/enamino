@@ -1,7 +1,8 @@
 import style from "./Footer.module.css";
 import { useTranslation } from "react-i18next";
 import logo from "../../assets/images/logo-complete.png";
-import { FaHome, FaUser, FaPhone, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa6";
+import { FaHome, FaUser, FaPhone, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 
 export default function Footer() {
