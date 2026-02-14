@@ -68,17 +68,16 @@ open https://vercel.com/dashboard
 `vercel.json` contains rewrite rules so client-side routes work:
 ```json
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
+      "source": "/((?!api|assets|icons|manifest\\.json|sw\\.js).*)",
+      "destination": "/index.html"
     }
   ]
 }
 ```
 
-This allows direct access to `/contact`, `/safaris`, etc.
+This allows direct access to `/contact`, `/safaris`, etc. Uses modern `rewrites` syntax (not deprecated `routes`).
 
 ---
 
