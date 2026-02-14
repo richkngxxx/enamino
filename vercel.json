@@ -1,9 +1,8 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
+      "source": "/((?!api|assets|icons|manifest\\.json|sw\\.js).*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
