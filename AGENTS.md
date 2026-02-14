@@ -5,35 +5,43 @@
 - **Framework**: React + Vite
 - **Hosting**: Vercel (GitHub-connected)
 - **URL**: https://www.enamino.fr
-- **GitHub**: https://github.com/Gaston-Valentini/enamino
+- **GitHub**: https://github.com/richkngxxx/enamino ⭐ **CORRECT REPO**
 
 ---
 
-## Deployment Process (IMPORTANT!)
+## Deployment Process (CRITICAL - READ THIS!)
 
-### How Deployment Works
-This project uses **GitHub → Vercel auto-deployment**:
-1. User logs into Vercel via GitHub OAuth (no API token)
-2. When you push to `main` branch, Vercel auto-deploys
-3. No CLI token needed!
+### ⚠️ COMMON MISTAKES TO AVOID
 
-### To Deploy
+| Mistake | Why It Fails |
+|---------|-------------|
+| `git push origin main` | Wrong remote! `origin` = Gaston-Valentini/enamino (not connected to Vercel) |
+| Using `routes` in vercel.json | Deprecated syntax, use `rewrites` instead |
+| Committing Vercel tokens | GitHub push protection blocks the push |
+| Asking user for tokens | User uses GitHub OAuth, not API tokens |
 
-**Simply push to GitHub:**
+### ✅ CORRECT DEPLOYMENT
+
+**ALWAYS push to `rich` remote:**
 ```bash
 git add <changed-files>
 git commit -m "Your commit message"
-git push origin main
+git push rich main          # ✅ CORRECT - richkngxxx/enamino
+# NOT: git push origin main # ❌ WRONG - Gaston-Valentini/enamino
 ```
 
-**Then check deployment status:**
-- Vercel Dashboard: https://vercel.com/dashboard
-- Or run: `npx vercel` (will open browser to log in via GitHub)
+**Verify your remote:**
+```bash
+git remote -v
+# Should show:
+# rich  https://github.com/richkngxxx/enamino.git (push)  ✅
+# origin  git@github.com:Gaston-Valentini/enamino.git    ❌ Don't use this
+```
 
-### ⚠️ DO NOT Ask User For Tokens
-- User uses **GitHub OAuth**, not API tokens
-- There's no `VERCEL_TOKEN` to provide
-- Previous attempts to use tokens failed because user doesn't use them
+### How Deployment Works
+1. Push to `rich/main` (richkngxxx/enamino)
+2. Vercel auto-deploys from that repo
+3. Check status: https://vercel.com/dashboard
 
 ---
 
@@ -46,26 +54,35 @@ npm run build        # Build for production
 npm run preview      # Preview production build
 ```
 
-### Check Deployment Status
+### Deployment
 ```bash
-# Opens browser, user logs in with GitHub
-npx vercel
+# ✅ CORRECT - Always use 'rich' remote
+git push rich main
 
-# Or check dashboard directly
-open https://vercel.com/dashboard
+# Check deployment
+npx vercel           # Opens browser for GitHub login
+# Or: open https://vercel.com/dashboard
 ```
 
 ---
 
 ## Project Configuration
 
-### Vercel Setup (Already Configured)
+### Git Remotes
+```
+origin  git@github.com:Gaston-Valentini/enamino.git  (DON'T USE)
+rich    https://github.com/richkngxxx/enamino.git   (USE THIS)
+```
+
+### Vercel Setup
 - **Project ID**: `prj_XXtr6xcMCJkUp7kzdQ8EHnnPJ6al`
 - **Org ID**: `team_dzz4qhSmabaIMNENSrhnSjBF`
-- **Linked**: Yes (`.vercel/project.json` exists)
+- **Connected to**: `richkngxxx/enamino`
 
-### SPA Routing (Already Fixed)
-`vercel.json` contains rewrite rules so client-side routes work:
+### SPA Routing Configuration
+
+**File**: `vercel.json`
+
 ```json
 {
   "rewrites": [
@@ -73,49 +90,63 @@ open https://vercel.com/dashboard
       "source": "/((?!api|assets|icons|manifest\\.json|sw\\.js).*)",
       "destination": "/index.html"
     }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }
 ```
 
-This allows direct access to `/contact`, `/safaris`, etc. Uses modern `rewrites` syntax (not deprecated `routes`).
+**⚠️ IMPORTANT**: Use `rewrites` (modern), NOT `routes` (deprecated). The `routes` syntax causes build failures.
 
 ---
 
 ## Environment Variables
 
-Located in `.env` (gitignored):
+**File**: `.env` (gitignored - DO NOT COMMIT)
 
 ```env
 # Gmail SMTP for contact form
 SMTP_USER=enamino@gmail.com
 SMTP_PASS=your-app-password-here
 RECIPIENT_EMAIL=enamino@gmail.com
-
-# Note: No Vercel token - uses GitHub OAuth
 ```
+
+**⚠️ NEVER add Vercel tokens here** - GitHub push protection will block the push.
 
 ---
 
 ## Troubleshooting
 
-### 404 errors on direct route access
-**Cause**: Missing SPA routing config  
-**Fix**: Ensure `vercel.json` has the routes config (see above)  
-**Deploy**: Push to GitHub
+### "GH013: Repository rule violations" error
+**Cause**: You committed a secret (token)  
+**Fix**: Remove token from commit, use `git commit --amend` or `git reset`
 
-### "Not authorized" errors
-User needs to log in via browser:
-```bash
-npx vercel
-# Opens browser → Click "Continue with GitHub"
-```
+### 404 errors on direct route access (/contact, etc.)
+**Cause**: Wrong vercel.json syntax  
+**Fix**: Use `rewrites` array, not deprecated `routes`  
+**Deploy**: `git push rich main`
 
-### Build failures
+### "Everything up-to-date" but no deployment
+**Cause**: Pushed to wrong remote (`origin` instead of `rich`)  
+**Fix**: `git push rich main`
+
+### Build failures on Vercel
 ```bash
-# Clean install
-rm -rf node_modules package-lock.json
-npm install
+# Test locally first
 npm run build
+
+# If it works locally but fails on Vercel, check:
+# 1. vercel.json syntax (use rewrites, not routes)
+# 2. All dependencies in package.json
 ```
 
 ---
@@ -131,9 +162,9 @@ npm run build
 ├── api/                   # Serverless API functions
 ├── public/                # Static assets
 ├── index.html             # Entry HTML
-├── vercel.json            # Vercel config (SPA routing)
+├── vercel.json            # Vercel config ⭐ Use 'rewrites' syntax
 ├── vite.config.js         # Vite build config
-└── .env                   # Environment variables
+└── .env                   # Environment variables (gitignored)
 ```
 
 ## Routes
@@ -143,7 +174,7 @@ npm run build
 - `/travelers` - Travelers guide
 - `/contact` - Contact form
 
-All handled by React Router (client-side).
+All handled by React Router (client-side). The `vercel.json` rewrite rules ensure direct access works.
 
 ---
 
@@ -152,7 +183,11 @@ All handled by React Router (client-side).
 | Task | Command |
 |------|---------|
 | Start dev | `npm run dev` |
-| **Deploy** | `git push origin main` |
-| Check status | `npx vercel` or dashboard |
+| **Deploy** | `git push rich main` ⭐ |
+| Check status | `npx vercel` or https://vercel.com/dashboard |
 
-**Remember**: Push to GitHub = Deploy to Vercel. No tokens needed!
+### ⭐ Golden Rules
+1. **Always push to `rich` remote** (richkngxxx/enamino)
+2. **Use `rewrites`** in vercel.json, never `routes`
+3. **Never commit tokens** - GitHub will block the push
+4. **User uses GitHub OAuth** - no API tokens needed
