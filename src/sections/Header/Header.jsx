@@ -56,7 +56,7 @@ export default function Header() {
             </video>
             <div className={style.overlay}>
                 <div className={style.logo}>
-                    <img src={logo} alt="Enamino Eco-Village Logo" />
+                    <img src={logo} alt="Enamino Eco-Village Logo" fetchpriority="high" />
                 </div>
                 <p className={style.slogan}>{t("header.slogan")}</p>
                 <h1 className={style.title}>L' Eco-Village d' Enamino</h1>
