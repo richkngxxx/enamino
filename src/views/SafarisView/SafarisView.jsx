@@ -6,6 +6,7 @@ import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import headerImage from "../../assets/images/safaris-header.jpg";
 import Loango from "../../sections/Loango/Loango";
 import Safaris from "../../sections/Safaris/Safaris";
+import CTASection from "../../components/CTASection/CTASection";
 
 export default function SafarisView() {
     const [t, i18n] = useTranslation("global");
