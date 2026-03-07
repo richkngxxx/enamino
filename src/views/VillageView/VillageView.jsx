@@ -89,7 +89,7 @@ export default function VillageView() {
             <Camp />
             <CTASection text={t("cta.afterCamp")} />
             <Bungalow />
-            <CTASection text={t("cta.afterBungalow")} />
+            <CTASection text={t("cta.afterBungalow")} showWhatsApp={true} />
             <Menu />
             <CTASection text={t("cta.afterMenu")} />
             <Enviroment />

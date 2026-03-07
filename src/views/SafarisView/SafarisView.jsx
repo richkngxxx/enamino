@@ -41,6 +41,7 @@ export default function SafarisView() {
             <HeaderComponent image={headerImage} text={t("safarisHeader")} />
             <Loango />
             <Safaris />
+            <CTASection text={t("cta.afterSafaris") || "Contactez-nous pour réserver votre safari !"} showWhatsApp={true} />
         </section>
     );
 }
