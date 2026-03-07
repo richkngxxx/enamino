@@ -15,7 +15,7 @@ export default function Formalities() {
             <div className={style.cards}>
                 <div className={style.cardsCard}>
                     <div className={style.cardsCardIcon}>
-                        <img src={documents} />
+                        <img src={documents} alt="Icône documents de voyage" loading="lazy" />
                     </div>
                     <div className={style.cardsCardTitles}>
                         <p className={style.cardsCardTitlesTitle}>{t("formailities.cardOneTitle")}</p>
@@ -31,7 +31,7 @@ export default function Formalities() {
                 </div>
                 <div className={style.cardsCard}>
                     <div className={style.cardsCardIcon}>
-                        <img src={visa} />
+                        <img src={visa} alt="Icône visa" loading="lazy" />
                     </div>
                     <div className={style.cardsCardTitles}>
                         <p className={style.cardsCardTitlesTitle}>{t("formailities.cardTwoTitle")}</p>
@@ -75,7 +75,7 @@ export default function Formalities() {
                 </div>
                 <div className={style.cardsCard}>
                     <div className={style.cardsCardIcon}>
-                        <img src={vaccination} />
+                        <img src={vaccination} alt="Icône vaccination" loading="lazy" />
                     </div>
                     <div className={style.cardsCardTitles}>
                         <p className={style.cardsCardTitlesTitle}>{t("formailities.cardThreeTitle")}</p>
@@ -94,7 +94,7 @@ export default function Formalities() {
                 </div>
                 <div className={style.cardsCard}>
                     <div className={style.cardsCardIcon}>
-                        <img src={insurance} />
+                        <img src={insurance} alt="Icône assurance voyage" loading="lazy" />
                     </div>
                     <div className={style.cardsCardTitles}>
                         <p className={style.cardsCardTitlesTitle}>{t("formailities.cardFourTitle")}</p>
@@ -112,7 +112,7 @@ export default function Formalities() {
                 </div>
                 <div className={style.cardsCard}>
                     <div className={style.cardsCardIcon}>
-                        <img src={directions} />
+                        <img src={directions} alt="Icône itinéraire" loading="lazy" />
                     </div>
                     <div className={style.cardsCardTitles}>
                         <p className={style.cardsCardTitlesTitle}>{t("formailities.cardFiveTitle")}</p>

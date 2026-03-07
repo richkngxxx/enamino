@@ -7,7 +7,7 @@ export default function Parks() {
 
     return (
         <section className={style.container}>
-            <p className={style.title}>{t("parks.title")}</p>
+            <h2 className={style.title}>{t("parks.title")}</h2>
             <div className={style.data}>
                 <table className={style.dataTable}>
                     <thead>
@@ -100,7 +100,7 @@ export default function Parks() {
                     </tbody>
                 </table>
                 <div className={style.dataImage}>
-                    <img src={image} />
+                    <img src={image} alt="Carte des parcs nationaux du Gabon" loading="lazy" />
                 </div>
             </div>
         </section>

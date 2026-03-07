@@ -5,6 +5,7 @@ import "./index.css";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import { HelmetProvider } from "react-helmet-async";
 import frLocale from "./locales/fr/global.json";
 import esLocale from "./locales/es/global.json";
 import enLocale from "./locales/en/global.json";
@@ -43,9 +44,11 @@ const hideLoading = () => {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <I18nextProvider i18n={i18next}>
-            <App />
-        </I18nextProvider>
+        <HelmetProvider>
+            <I18nextProvider i18n={i18next}>
+                <App />
+            </I18nextProvider>
+        </HelmetProvider>
     </React.StrictMode>
 );
 

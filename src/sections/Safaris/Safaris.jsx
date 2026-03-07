@@ -35,12 +35,12 @@ export default function Safaris() {
     return (
         <section className={style.container}>
             <div className={style.heading}>
-                <p className={style.headingTitle}>{t("safaris.title")}</p>
+                <h2 className={style.headingTitle}>{t("safaris.title")}</h2>
                 <p className={style.headingSubtitle}>{t("safaris.subtitle")}</p>
             </div>
             <div className={style.section}>
                 <div className={style.sectionHeading}>
-                    <p className={style.sectionHeadingTitle}>{t("safaris.sectionOneTitle")}</p>
+                    <h3 className={style.sectionHeadingTitle}>{t("safaris.sectionOneTitle")}</h3>
                 </div>
                 <div className={style.sectionSafaris}>
                     <div className={style.sectionSafarisSafari}>
@@ -89,31 +89,31 @@ export default function Safaris() {
                 <div className={style.sectionCarousel}>
                     <Carousel>
                         <div>
-                            <img src={image16} />
+                            <img src={image16} alt="Safari près de l'Eco-Village d'Enamino - observation de la faune" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image17} />
+                            <img src={image17} alt="Safari en forêt à Enamino" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image18} />
+                            <img src={image18} alt="Safari en lagune près d'Enamino" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image19} />
+                            <img src={image19} alt="Paysage de savane à Enamino" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image20} />
+                            <img src={image20} alt="Safari nocturne à l'Eco-Village d'Enamino" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image21} />
+                            <img src={image21} alt="Observation des oiseaux à Enamino" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image23} />
+                            <img src={image23} alt="Safari en 4x4 près de l'Eco-Village" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image24} />
+                            <img src={image24} alt="Flore tropicale près d'Enamino" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image25} />
+                            <img src={image25} alt="Safari à l'Eco-Village d'Enamino - paysage du Gabon" loading="lazy" />
                         </div>
                     </Carousel>
                 </div>
@@ -125,7 +125,7 @@ export default function Safaris() {
             </div>
             <div className={style.section}>
                 <div className={style.sectionHeading}>
-                    <p className={style.sectionHeadingTitle}>{t("safaris.sectionTwoTitle")}</p>
+                    <h3 className={style.sectionHeadingTitle}>{t("safaris.sectionTwoTitle")}</h3>
                     <p className={style.sectionHeadingSubtitle}>{t("safaris.sectionTwoSubtitle")}</p>
                 </div>
                 <div className={style.sectionSafaris}>
@@ -170,49 +170,49 @@ export default function Safaris() {
                 <div className={style.sectionCarousel}>
                     <Carousel>
                         <div>
-                            <img src={image1} />
+                            <img src={image1} alt="Safari à Akaka - observation des hippopotames" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image2} />
+                            <img src={image2} alt="Safari en lagune à Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image3} />
+                            <img src={image3} alt="Faune sauvage à Akaka - Parc National de Loango" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image4} />
+                            <img src={image4} alt="Safari en forêt au Parc National de Loango - Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image5} />
+                            <img src={image5} alt="Observation des éléphants à Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image6} />
+                            <img src={image6} alt="Paysage de lagune à Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image7} />
+                            <img src={image7} alt="Safari en bateau à Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image8} />
+                            <img src={image8} alt="Gorille en forêt tropicale à Loango" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image9} />
+                            <img src={image9} alt="Exploration de la jungle à Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image10} />
+                            <img src={image10} alt="Rivière sauvage à Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image11} />
+                            <img src={image11} alt="Buffle dans la savane Loango" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image12} />
+                            <img src={image12} alt="Safari photo à Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image13} />
+                            <img src={image13} alt="Coucher de soleil sur la lagune Akaka" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image14} />
+                            <img src={image14} alt="Nature préservée au Parc National de Loango" loading="lazy" />
                         </div>
                         <div>
-                            <img src={image15} />
+                            <img src={image15} alt="Safari aventure à Akaka - Gabon" loading="lazy" />
                         </div>
                     </Carousel>
                 </div>

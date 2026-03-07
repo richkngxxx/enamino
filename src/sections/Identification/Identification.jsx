@@ -142,10 +142,10 @@ export default function Identification() {
                 </div>
                 <div className={style.images}>
                     <div className={style.imagesImage}>
-                        <img src={flag} />
+                        <img src={flag} alt="Drapeau du Gabon" loading="lazy" />
                     </div>
                     <div className={style.imagesImage}>
-                        <img src={provinces} />
+                        <img src={provinces} alt="Carte des provinces du Gabon" loading="lazy" />
                     </div>
                 </div>
             </div>

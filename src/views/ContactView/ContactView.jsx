@@ -1,6 +1,7 @@
 import style from "./ContactView.module.css";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import headerImage from "../../assets/images/contact-header.jpg";
 import Form from "../../sections/Form/Form";
@@ -16,6 +17,14 @@ export default function ContactView() {
 
     return (
         <section className={style.container}>
+            <Helmet>
+                <title>Contactez l'Eco-Village d'Enamino | Réservation au Gabon</title>
+                <meta name="description" content="Contactez-nous pour réserver votre séjour éco-touristique au Parc National de Loango, Gabon. Formulaire de contact et coordonnées." />
+                <meta property="og:title" content="Contactez l'Eco-Village d'Enamino | Réservation au Gabon" />
+                <meta property="og:description" content="Contactez-nous pour réserver votre séjour éco-touristique au Parc National de Loango, Gabon. Formulaire de contact et coordonnées." />
+                <meta property="og:url" content="https://enamino.fr/contact" />
+                <link rel="canonical" href="https://enamino.fr/contact" />
+            </Helmet>
             <HeaderComponent image={headerImage} text={"Contact"} />
             <Form />
             <Map />

@@ -32,7 +32,7 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const createCustomIcon = (imageUrl, size = 30) => {
     return L.divIcon({
         className: style.customMarker,
-        html: `<img src="${imageUrl}" style="width: ${size}px; height: auto;" alt="marker" />`,
+        html: `<img src="${imageUrl}" style="width: ${size}px; height: auto;" alt="Position de l'Eco-Village d'Enamino sur la carte" loading="lazy" />`,
         iconSize: [size, size],
         iconAnchor: [size / 2, size / 2],
         popupAnchor: [0, -size / 2]
@@ -57,7 +57,7 @@ export default function Map() {
 
     // Locations
     const enamino = { lat: -1.7277, lng: 9.2535, name: "L'Eco-Village d'Enamino", icon: position, size: 50 };
-    
+
     const locations = [
         { lat: -1.5750275260912617, lng: 9.265210210782604, name: "Omboué", icon: temple },
         { lat: -1.6513040117066657, lng: 9.321858467199517, name: "Île Evengué", icon: treking },
@@ -97,7 +97,7 @@ export default function Map() {
                 <h2 className={style.title}>{t('contact.mapTitle')}</h2>
                 <p className={style.subtitle}>{t('contact.mapSubtitle')}</p>
             </div>
-            
+
             <MapContainer
                 center={[enamino.lat, enamino.lng]}
                 zoom={9}
@@ -120,7 +120,7 @@ export default function Map() {
                     <Popup>
                         <div className={style.popup}>
                             <h3>{enamino.name}</h3>
-                            <button 
+                            <button
                                 className={style.directionsBtn}
                                 onClick={() => openGoogleMaps(enamino.lat, enamino.lng, enamino.name)}
                             >
@@ -143,13 +143,13 @@ export default function Map() {
                         <Popup>
                             <div className={style.popup}>
                                 <h3>{loc.name}</h3>
-                                <button 
+                                <button
                                     className={style.directionsBtn}
                                     onClick={() => openGoogleMaps(loc.lat, loc.lng, loc.name)}
                                 >
                                     {t('contact.directionsFromEnamino')}
                                 </button>
-                                <button 
+                                <button
                                     className={style.viewBtn}
                                     onClick={() => openGoogleMapsLocation(loc.lat, loc.lng)}
                                 >
@@ -174,7 +174,7 @@ export default function Map() {
             </MapContainer>
 
             <div className={style.info}>
-                <button 
+                <button
                     className={style.mainDirectionsBtn}
                     onClick={() => openGoogleMaps(enamino.lat, enamino.lng, enamino.name)}
                 >

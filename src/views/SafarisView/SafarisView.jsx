@@ -1,6 +1,7 @@
 import style from "./SafarisView.module.css";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import HeaderComponent from "../../components/HeaderComponent/HeaderComponent";
 import headerImage from "../../assets/images/safaris-header.jpg";
 import Loango from "../../sections/Loango/Loango";
@@ -15,6 +16,14 @@ export default function SafarisView() {
 
     return (
         <section className={style.container}>
+            <Helmet>
+                <title>Safaris au Parc National de Loango | Eco-Village d'Enamino</title>
+                <meta name="description" content="Découvrez nos safaris en forêt, lagune et savane au cœur du Parc National de Loango. Observation de gorilles, éléphants, baleines et plus." />
+                <meta property="og:title" content="Safaris au Parc National de Loango | Eco-Village d'Enamino" />
+                <meta property="og:description" content="Découvrez nos safaris en forêt, lagune et savane au cœur du Parc National de Loango. Observation de gorilles, éléphants, baleines et plus." />
+                <meta property="og:url" content="https://enamino.fr/safaris" />
+                <link rel="canonical" href="https://enamino.fr/safaris" />
+            </Helmet>
             <HeaderComponent image={headerImage} text={t("safarisHeader")} />
             <Loango />
             <Safaris />

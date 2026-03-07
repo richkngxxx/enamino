@@ -11,7 +11,7 @@ export default function Menu() {
     return (
         <section className={style.container}>
             <div className={style.heading}>
-                <p className={style.headingTitle}>{t("menu.title")}</p>
+                <h2 className={style.headingTitle}>{t("menu.title")}</h2>
                 <p className={style.headingText}>{t("menu.subtitle")}</p>
             </div>
             <div className={style.data}>

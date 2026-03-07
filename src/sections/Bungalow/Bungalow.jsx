@@ -72,7 +72,7 @@ export default function Bungalow() {
     return (
         <section className={style.container}>
             <div className={style.heading}>
-                <p className={style.headingTitle}>{t("bungalow.title")}</p>
+                <h2 className={style.headingTitle}>{t("bungalow.title")}</h2>
                 <p className={style.headingText}>{t("bungalow.subtitle")}</p>
             </div>
             <div className={style.data}>
@@ -96,26 +96,26 @@ export default function Bungalow() {
             {innerWidth > 767 ? (
                 <div className={style.images}>
                     <div className={style.imagesImage}>
-                        <img src={BungalowTwo} />
+                        <img src={BungalowTwo} alt="Intérieur du bungalow" loading="lazy" />
                     </div>
                     <div className={style.imagesImage}>
-                        <img src={bungalowOne} />
+                        <img src={bungalowOne} alt="Bungalow de l'Eco-Village d'Enamino" loading="lazy" />
                     </div>
                     <div className={style.imagesImage}>
-                        <img src={BungalowThree} />
+                        <img src={BungalowThree} alt="Terrasse du bungalow" loading="lazy" />
                     </div>
                 </div>
             ) : (
                 <div className={style.imagesCarousel}>
                     <div className={style.imagesCarouselBig}>
                         <div className={`${style.imagesCarouselBigImage} bungalowsCarouselImage`}>
-                            <img src={bungalowOne} />
+                            <img src={bungalowOne} alt="Bungalow de l'Eco-Village d'Enamino" loading="lazy" />
                         </div>
                         <div className={`${style.imagesCarouselBigImage} bungalowsCarouselImage`}>
-                            <img src={BungalowTwo} />
+                            <img src={BungalowTwo} alt="Intérieur du bungalow" loading="lazy" />
                         </div>
                         <div className={`${style.imagesCarouselBigImage} bungalowsCarouselImage`}>
-                            <img src={BungalowThree} />
+                            <img src={BungalowThree} alt="Terrasse du bungalow" loading="lazy" />
                         </div>
                     </div>
                     <div className={style.imagesCarouselNavbar}>

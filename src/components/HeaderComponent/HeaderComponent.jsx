@@ -4,7 +4,7 @@ export default function HeaderComponent({ image, text }) {
     return (
         <section className={style.container} style={{ backgroundImage: `url(${image})` }}>
             <div className={style.overlay}>
-                <p className={style.text}>{text}</p>
+                <h1 className={style.text}>{text}</h1>
             </div>
         </section>
     );

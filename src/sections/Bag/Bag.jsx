@@ -18,7 +18,7 @@ export default function Bag() {
                 <div className={style.dataSection}>
                     <div className={style.dataSectionTitle}>
                         <div className={style.dataSectionTitleIcon}>
-                            <img src={clothing} />
+                            <img src={clothing} alt="Icône vêtements" loading="lazy" />
                         </div>
                         <p className={style.dataSectionTitleText}>{t("bag.clothingTitle")}</p>
                     </div>
@@ -34,7 +34,7 @@ export default function Bag() {
                 <div className={style.dataSection}>
                     <div className={style.dataSectionTitle}>
                         <div className={style.dataSectionTitleIcon}>
-                            <img src={shoes} />
+                            <img src={shoes} alt="Icône chaussures" loading="lazy" />
                         </div>
                         <p className={style.dataSectionTitleText}>{t("bag.shoesTitle")}</p>
                     </div>
@@ -47,7 +47,7 @@ export default function Bag() {
                 <div className={style.dataSection}>
                     <div className={style.dataSectionTitle}>
                         <div className={style.dataSectionTitleIcon}>
-                            <img src={accessories} />
+                            <img src={accessories} alt="Icône accessoires" loading="lazy" />
                         </div>
                         <p className={style.dataSectionTitleText}>{t("bag.accessoriesTitle")}</p>
                     </div>
@@ -65,7 +65,7 @@ export default function Bag() {
                 <div className={style.dataSection}>
                     <div className={style.dataSectionTitle}>
                         <div className={style.dataSectionTitleIcon}>
-                            <img src={health} />
+                            <img src={health} alt="Icône santé" loading="lazy" />
                         </div>
                         <p className={style.dataSectionTitleText}>{t("bag.healthTitle")}</p>
                     </div>

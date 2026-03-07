@@ -15,53 +15,53 @@ export default function Enviroment() {
             <div className={style.overlay}>
                 <div className={style.content}>
                     <div className={style.heading}>
-                        <p className={style.headingTitle}>{t("enviroment.headingTitle")}</p>
+                        <h2 className={style.headingTitle}>{t("enviroment.headingTitle")}</h2>
                         <p className={style.headingText}>{t("enviroment.headingText")}</p>
                     </div>
                     <div className={style.cards}>
                         <div className={style.cardsCardLeft}>
                             <div className={style.cardsCardLeftData}>
-                                <p className={style.cardsCardLeftDataTitle}>{t("enviroment.cardTitleOne")}</p>
+                                <h3 className={style.cardsCardLeftDataTitle}>{t("enviroment.cardTitleOne")}</h3>
                                 <p className={style.cardsCardLeftDataText}>{t("enviroment.cardTextOne")}</p>
                             </div>
                             <div className={style.cardsCardImage}>
-                                <img src={imageOne} />
+                                <img src={imageOne} alt="Paysage naturel de l'Eco-Village d'Enamino" loading="lazy" />
                             </div>
                         </div>
                         <div className={style.cardsCardRight}>
                             <div className={style.cardsCardImage}>
-                                <img src={imageTwo} />
+                                <img src={imageTwo} alt="Flore tropicale au Gabon" loading="lazy" />
                             </div>
                             <div className={style.cardsCardRightData}>
-                                <p className={style.cardsCardRightDataTitle}>{t("enviroment.cardTitleTwo")}</p>
+                                <h3 className={style.cardsCardRightDataTitle}>{t("enviroment.cardTitleTwo")}</h3>
                                 <p className={style.cardsCardRightDataText}>{t("enviroment.cardTextTwo")}</p>
                             </div>
                         </div>
                         <div className={style.cardsCardLeft}>
                             <div className={style.cardsCardLeftData}>
-                                <p className={style.cardsCardLeftDataTitle}>{t("enviroment.cardTitleThree")}</p>
+                                <h3 className={style.cardsCardLeftDataTitle}>{t("enviroment.cardTitleThree")}</h3>
                                 <p className={style.cardsCardLeftDataText}>{t("enviroment.cardTextThree")}</p>
                             </div>
                             <div className={style.cardsCardImage}>
-                                <img src={imageThree} />
+                                <img src={imageThree} alt="Sentier écologique à Enamino" loading="lazy" />
                             </div>
                         </div>
                         <div className={style.cardsCardRight}>
                             <div className={style.cardsCardImage}>
-                                <img src={imageFour} />
+                                <img src={imageFour} alt="Faune sauvage de la côte gabonaise" loading="lazy" />
                             </div>
                             <div className={style.cardsCardRightData}>
-                                <p className={style.cardsCardRightDataTitle}>{t("enviroment.cardTitleFour")}</p>
+                                <h3 className={style.cardsCardRightDataTitle}>{t("enviroment.cardTitleFour")}</h3>
                                 <p className={style.cardsCardRightDataText}>{t("enviroment.cardTextFour")}</p>
                             </div>
                         </div>
                         <div className={style.cardsCardLeft}>
                             <div className={style.cardsCardLeftData}>
-                                <p className={style.cardsCardLeftDataTitle}>{t("enviroment.cardTitleFive")}</p>
+                                <h3 className={style.cardsCardLeftDataTitle}>{t("enviroment.cardTitleFive")}</h3>
                                 <p className={style.cardsCardLeftDataText}>{t("enviroment.cardTextFive")}</p>
                             </div>
                             <div className={style.cardsCardImage}>
-                                <img src={imageFive} />
+                                <img src={imageFive} alt="Environnement préservé à Enamino" loading="lazy" />
                             </div>
                         </div>
                     </div>

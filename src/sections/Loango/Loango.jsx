@@ -9,17 +9,17 @@ export default function Loango() {
     return (
         <section className={style.container}>
             <div className={style.content}>
-                <p className={style.title}>{t("loango.title")}</p>
+                <h2 className={style.title}>{t("loango.title")}</h2>
                 <div className={style.blocks}>
                     <div className={style.blocksBlock}>
                         <p className={style.blocksBlockText}>{t("loango.blockOne")}</p>
                         <div className={style.blocksBlockImage}>
-                            <img src={image1} />
+                            <img src={image1} alt="Vue aérienne du Parc National de Loango" loading="lazy" />
                         </div>
                     </div>
                     <div className={style.blocksBlock}>
                         <div className={style.blocksBlockImage}>
-                            <img src={image2} />
+                            <img src={image2} alt="Paysage du Parc National de Loango" loading="lazy" />
                         </div>
                         <p className={style.blocksBlockText}>{t("loango.blockTwo")}</p>
                     </div>

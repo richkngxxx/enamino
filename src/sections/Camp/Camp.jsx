@@ -20,7 +20,7 @@ export default function Camp() {
         <section className={style.container}>
             <div className={style.data}>
                 <div className={style.dataInfo}>
-                    <p className={style.dataInfoTitle}>{t("camp.title")}</p>
+                    <h2 className={style.dataInfoTitle}>{t("camp.title")}</h2>
                     <p className={style.dataInfoText}>
                         {t("camp.textOne")}
                         <br />

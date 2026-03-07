@@ -31,13 +31,13 @@ export default function Header() {
             <div className={`${style.videoLoading} ${videoLoaded ? style.hidden : ''}`}>
                 <div className={style.spinner}></div>
             </div>
-            
+
             {/* Video background - always render */}
-            <video 
+            <video
                 className={style.video}
-                autoPlay 
-                loop 
-                muted 
+                autoPlay
+                loop
+                muted
                 playsInline
                 disablePictureInPicture
                 disableRemotePlayback
@@ -59,7 +59,7 @@ export default function Header() {
                     <img src={logo} alt="Enamino Eco-Village Logo" />
                 </div>
                 <p className={style.slogan}>{t("header.slogan")}</p>
-                <p className={style.title}>L' Eco-Village d' Enamino</p>
+                <h1 className={style.title}>L' Eco-Village d' Enamino</h1>
                 <button className={style.audio} onClick={playAudio}>
                     {t("header.audio")}
                 </button>
