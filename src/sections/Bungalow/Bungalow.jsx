@@ -1,9 +1,9 @@
 import style from "./Bungalow.module.css";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import bungalowOne from "../../assets/images/bungalow-1.jpg";
-import BungalowTwo from "../../assets/images/bungalow-2.jpg";
-import BungalowThree from "../../assets/images/bungalow-3.jpg";
+import bungalowOne from "../../assets/images/bungalow-1.webp";
+import BungalowTwo from "../../assets/images/bungalow-2.webp";
+import BungalowThree from "../../assets/images/bungalow-3.webp";
 import { IoArrowBackCircleSharp, IoArrowForwardCircleSharp } from "react-icons/io5";
 
 export default function Bungalow() {

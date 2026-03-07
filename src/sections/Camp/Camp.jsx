@@ -2,16 +2,16 @@ import style from "./Camp.module.css";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Carousel from "../../components/Carousel/Carousel";
-import image1 from "../../assets/images/camp-1.jpg";
-import image2 from "../../assets/images/camp-2.jpg";
-import image3 from "../../assets/images/camp-3.jpg";
-import image4 from "../../assets/images/camp-4.jpg";
-import image5 from "../../assets/images/camp-5.jpg";
-import image6 from "../../assets/images/camp-6.jpg";
-import image7 from "../../assets/images/camp-7.jpg";
-import image8 from "../../assets/images/camp-8.jpg";
-import image9 from "../../assets/images/camp-9.jpg";
-import image10 from "../../assets/images/camp-10.jpg";
+import image1 from "../../assets/images/camp-1.webp";
+import image2 from "../../assets/images/camp-2.webp";
+import image3 from "../../assets/images/camp-3.webp";
+import image4 from "../../assets/images/camp-4.webp";
+import image5 from "../../assets/images/camp-5.webp";
+import image6 from "../../assets/images/camp-6.webp";
+import image7 from "../../assets/images/camp-7.webp";
+import image8 from "../../assets/images/camp-8.webp";
+import image9 from "../../assets/images/camp-9.webp";
+import image10 from "../../assets/images/camp-10.webp";
 
 export default function Camp() {
     const [t, i18n] = useTranslation("global");

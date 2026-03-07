@@ -1,7 +1,7 @@
 import style from "./Header.module.css";
 import { useTranslation } from "react-i18next";
 import video from "../../assets/videos/header.mp4";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.webp";
 import audioFile from "../../assets/audio/header.mp3";
 import { useState, useEffect } from "react";
 
