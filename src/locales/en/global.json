@@ -9,7 +9,6 @@
         "linkThree": "Gabon",
         "linkFour": "Travel Tips",
         "linkFive": "Contact",
-
         "selectLanguage": "Language",
         "france": "French",
         "spanish": "Spanish",
@@ -26,7 +25,6 @@
     "bungalow": {
         "title": "LODGING in BUNGALOW or TENT",
         "subtitle": "Designed as a bungalow village following the Ogooué-Maritime housing model, using local materials: wood, bamboo, raffia, bark, woven thatched roof",
-
         "listOne": "1 double bed",
         "listTwo": "2 single bunk beds in one of the bungalows",
         "listThree": "Mosquito nets",
@@ -39,13 +37,11 @@
         "listTen": "Sheets, towels, and fleece blankets provided",
         "listEleven": "Option to sleep in dome tents for 2 or 4 people if bungalows are full",
         "listTwelve": "Bush bivouac organization",
-
         "text": "...Unique, panoramic view of the ocean, where during dark nights you can distinguish waves teeming with phosphorescent plankton. During the day, dolphins and turtles come to feed near the rocks in front of the camp..."
     },
     "menu": {
         "title": "FULL BOARD AND SET MENU",
         "subtitle": "Discover and savor delicious African flavors according to the season and availability.",
-
         "listOne": "Local specialties: Odika, Nyembwe, cassava leaves",
         "listTwo": "Delicious freshly caught fish from local waters",
         "listThree": "Famous Enamino oysters, fresh or gratiné",
@@ -57,7 +53,6 @@
     "enviroment": {
         "headingTitle": "OUR WILD ENVIRONMENT",
         "headingText": "Nestled between forest and ocean, along a perfectly pristine wild beach, the Enamino site offers you the choice between relaxation and activity-filled stays.",
-
         "cardTitleOne": "A unique environment...",
         "cardTextOne": "A privileged green setting for wildlife viewing and a beach lined with thick forest teeming with animals such as ghost crabs, shells, sitatunga antelopes, duikers, forest elephants (assalas), western lowland gorillas, and chimpanzees on each side of two lagoons surrounding Enamino. Several species of sea turtles (leatherback, green, olive ridley, hawksbill) come to nest on Enamino's wild beach from October to March.",
         "cardTitleTwo": "Cradled by the ocean...",
@@ -71,7 +66,6 @@
     },
     "loango": {
         "title": "LOANGO NATIONAL PARK",
-
         "blockOne": "Considered by specialists as ONE OF THE RICHEST PARKS IN CENTRAL AFRICA, it is a true biodiversity reservoir with varied habitats: gallery forest, savanna, swamp, mangrove, lagoon, and beach. Loango National Park covers an area of ​​1,550 km². A peninsula stretching 86 kilometers located between the ocean and lagoons: to the north the Iguela Lagoon (aka Ngové Lagoon) and to the south the Sette Cama Lagoon (aka Ndogo Lagoon), with large marshes to the west and the Atlantic Ocean to the east. This park combines the former nature reserves of Iguela and Sette-Cama and can only be crossed entirely on foot.",
         "blockTwo": "Renowned for its HIGH CONCENTRATION OF FOREST ELEPHANTS or assalas and its HIPPOPOTAMUS SURFING the waves. On its forest-lined beaches, large primates, forest buffalos, bushpigs, leopards, and sea turtles gather at sunset, accompanied by the spectacular jumps of whales."
     },
@@ -329,7 +323,8 @@
         "defaultText": "Ready to experience the magic of Gabon? Book your stay now!",
         "afterCamp": "Want to stay in our eco-camp? Reserve your spot today!",
         "afterBungalow": "Experience authentic accommodation in the heart of nature!",
-        "afterMenu": "Taste the delicious local flavors of Gabon!"
+        "afterMenu": "Taste the delicious local flavors of Gabon!",
+        "afterSafaris": "Want to live this experience? Contact us!"
     },
     "footer": {
         "linksTitle": "More links",

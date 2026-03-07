@@ -9,7 +9,6 @@
         "linkThree": "Le Gabon",
         "linkFour": "Conseils aux Voyageurs",
         "linkFive": "Contact",
-
         "selectLanguage": "Langue",
         "france": "Français",
         "spanish": "Espagnol",
@@ -26,7 +25,6 @@
     "bungalow": {
         "title": "LOGEMENT en BUNGALOW ou en TENTE",
         "subtitle": "Élaboré sous forme de village-bungalow selon le modèle des habitations de l’Ogooué-Maritime, avec des matériaux locaux: bois, bambou, raphia, écorce, toit tissè en paille",
-
         "listOne": "1 lit double",
         "listTwo": "2 lits simples superposés dans un des bungalow",
         "listThree": "Moustiquaires",
@@ -39,13 +37,11 @@
         "listTen": "Draps, serviettes et couvertures polaires fournis",
         "listEleven": "Possibilité de dormir en tente-dôme de 2 ou 4 places si bungalows complets",
         "listTwelve": "Organisation de bivouacs en brousse",
-
         "text": "...Unique, vue panoramique sur l’océan, de laquelle vous pourrez distinguer durant les nuits obscures les vagues chargées de planctons phosphorescents. Le jour, dauphins et tortues viennent se nourrir dans les rochers face au campement..."
     },
     "menu": {
         "title": "PENSION COMPLÈTE ET TABLE D’HÔTE",
         "subtitle": "Vous pourrez découvrir et savourer les délicieuses saveurs africaines en fonction de la saison et de l'offre",
-
         "listOne": "Les spécialités locales : Odica, Nyenboué, feuilles de manioc",
         "listTwo": "Les délicieux poissons fraîchement pêchés sur place",
         "listThree": "Les fameuses huîtres d’Enamino fraiches ou gratinées",
@@ -57,7 +53,6 @@
     "enviroment": {
         "headingTitle": "NOTRE ENVIRONNEMENT SAUVAGE",
         "headingText": "Serti entre forêt et océan, le long d’une plage sauvage restée parfaitement intacte, le site d’Enamino vous laisse le choix entre: Sèjour détente et sèjour avec activités.",
-
         "cardTitleOne": "Un environnement unique...",
         "cardTextOne": "Ecrin de végétation privilégié pour la vision animalière et plage ourlée d’une épaisse forêt regorgeant animaux tels que des crabes fantômes, coquillages, hippopotames, antilopes sitatunga, céphalophes, éléphants de forêt (ou assalas), gorilles des plaines occidentales et chimpanzés de chaque côtès de deux lagunes qui entourent Enamino. Plusieurs espèces de tortues marines (luth, verte, olivâtre, caret) viennent pondre sur la plage sauvage d'Enamino d'octobre à mars.",
         "cardTitleTwo": "Bercé par l'océan...",
@@ -71,7 +66,6 @@
     },
     "loango": {
         "title": "LE PARC NATIONAL DE LOANGO",
-
         "blockOne": "Considéré par les spécialistes comme l’UN DES PARCS LES PLUS RICHES D’AFRIQUE CENTRALE, il constitue un véritable réservoir de biodiversité aux biotopes variés : forêt galerie, savane, marécage, mangrove, lagune, plage. Le Parc National de Loango s'étend sur une superficie de 1 550 km². Bras de terre s’étirant sur 86 kilomètres situé entre océan et lagunes: au Nord la Lagune d’Iguela (alias Lagune Ngové) et au Sud la Lagune de Sette Cama (alias Lagune Ndogo), à l’Ouest de grands marécages et à l’Est l’Océan Atlantique. Ce parc regroupe les anciennes réserves naturelles d’Iguela et de Sette-Cama et il a la particularité de ne pouvoir être traversé dans sa totalité, qu’à pied.",
         "blockTwo": "Réputé pour sa GRANDE CONCENTRATION D’ÉLÉPHANTS de forêt ou assalas et ses HIPPOPOTAMES SURFANT sur les vagues. Sur ses plages que borde la forêt, de grands singes, buffles de forêt, potamochères, panthères et tortues marines viennent se retrouver au coucher du soleil, devant le saut spectaculaire des baleines."
     },
@@ -329,7 +323,8 @@
         "defaultText": "Prêt à vivre la magie du Gabon? Réservez votre séjour maintenant!",
         "afterCamp": "Vous voulez séjourner dans notre éco-camp? Réservez votre place aujourd'hui!",
         "afterBungalow": "Vivez un hébergement authentique au cœur de la nature!",
-        "afterMenu": "Goûtez aux délicieuses saveurs locales du Gabon!"
+        "afterMenu": "Goûtez aux délicieuses saveurs locales du Gabon!",
+        "afterSafaris": "Envie de vivre cette expérience ? Contactez-nous !"
     },
     "footer": {
         "linksTitle": "Plus de liens",

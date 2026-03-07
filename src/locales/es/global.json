@@ -9,7 +9,6 @@
         "linkThree": "Gabón",
         "linkFour": "Consejos para Viajeros",
         "linkFive": "Contacto",
-
         "selectLanguage": "Idioma",
         "france": "Francés",
         "spanish": "Español",
@@ -26,7 +25,6 @@
     "bungalow": {
         "title": "ALOJAMIENTO EN BUNGALOW O TIENDA DE CAMPANA",
         "subtitle": "Diseñado como un pueblo de bungalows siguiendo el modelo de las viviendas del Ogooué-Maritime, utilizando materiales locales: madera, bambú, rafia, corteza y tejado de paja",
-
         "listOne": "1 cama doble",
         "listTwo": "2 camas individuales en litera en uno de los bungalows",
         "listThree": "Mosquiteras",
@@ -39,13 +37,11 @@
         "listTen": "Se proporcionan sábanas, toallas y mantas polares",
         "listEleven": "Posibilidad de dormir en tienda de campaña para 2 o 4 personas si los bungalows están completos",
         "listTwelve": "Organización de campamentos en la selva",
-
         "text": "...Única vista panorámica del océano desde la cual, en las noches oscuras, se pueden ver las olas brillantes cargadas de plancton fosforescente. Durante el día, delfines y tortugas vienen a alimentarse frente al campamento..."
     },
     "menu": {
         "title": "PENSIÓN COMPLETA Y MENÚ DEL DÍA",
         "subtitle": "Disfrute de deliciosos sabores africanos según la temporada y la oferta",
-
         "listOne": "Especialidades locales: Odika, Nyembwe, hojas de mandioca",
         "listTwo": "Deliciosos pescados frescos pescados in situ",
         "listThree": "Famosas ostras frescas o gratinadas de Enamino",
@@ -57,7 +53,6 @@
     "enviroment": {
         "headingTitle": "NUESTRO ENTORNO SALVAJE",
         "headingText": "Enmarcado entre el bosque y el océano, a lo largo de una playa salvaje que ha permanecido perfectamente intacta, el sitio de Enamino le ofrece la opción de: Estancia de relajación y estancia con actividades.",
-
         "cardTitleOne": "Un entorno único...",
         "cardTextOne": "Un santuario de vegetación privilegiado para la observación de la fauna y una playa bordeada por densos bosques que albergan animales como cangrejos fantasma, conchas, hipopótamos, antílopes sitatunga, céfalos, elefantes de bosque (assalas), gorilas de llanura occidental y chimpancés a ambos lados de dos lagunas que rodean Enamino. Varias especies de tortugas marinas (laúd, verde, olivácea, carey) vienen a desovar en la playa salvaje de Enamino de octubre a marzo.",
         "cardTitleTwo": "Arrullado por el océano...",
@@ -71,7 +66,6 @@
     },
     "loango": {
         "title": "EL PARQUE NACIONAL DE LOANGO",
-
         "blockOne": "Considerado por los expertos como uno de los parques más ricos de África Central, es un verdadero reservorio de biodiversidad con diversos biotopos: bosque galería, sabana, pantano, manglar, laguna, playa. El Parque Nacional de Loango se extiende sobre una superficie de 1,550 km². Una franja de tierra que se extiende 86 kilómetros situada entre el océano y las lagunas: al norte la Laguna de Iguela (alias Laguna Ngové) y al sur la Laguna de Sette Cama (alias Laguna Ndogo), al oeste grandes pantanos y al este el Océano Atlántico. Este parque incluye las antiguas reservas naturales de Iguela y Sette-Cama y la particularidad de que solo puede ser atravesado completamente a pie.",
         "blockTwo": "Famoso por su gran concentración de elefantes de bosque o assalas y sus hipopótamos surfeando en las olas. En sus playas bordeadas por el bosque, grandes simios, búfalos de bosque, jabalíes, leopardos y tortugas marinas se reúnen al atardecer, frente a los espectaculares saltos de ballenas."
     },
@@ -329,7 +323,8 @@
         "defaultText": "¿Listo para vivir la magia de Gabón? ¡Reserva tu estancia ahora!",
         "afterCamp": "¿Quieres alojarte en nuestro eco-campamento? ¡Reserva tu plaza hoy!",
         "afterBungalow": "¡Experimenta el alojamiento auténtico en el corazón de la naturaleza!",
-        "afterMenu": "¡Prueba los deliciosos sabores locales de Gabón!"
+        "afterMenu": "¡Prueba los deliciosos sabores locales de Gabón!",
+        "afterSafaris": "¿Quieres vivir esta experiencia? ¡Contáctanos!"
     },
     "footer": {
         "linksTitle": "Más enlaces",
