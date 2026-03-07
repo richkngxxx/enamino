@@ -23,8 +23,20 @@ export default function Carousel({ children }) {
                 {children}
             </div>
             <div className={style.sliderNavbar}>
-                <FaArrowAltCircleLeft onClick={handlePrev} />
-                <FaArrowAltCircleRight onClick={handleNext} />
+                <FaArrowAltCircleLeft
+                    onClick={handlePrev}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handlePrev(); }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Image précédente"
+                />
+                <FaArrowAltCircleRight
+                    onClick={handleNext}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleNext(); }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Image suivante"
+                />
             </div>
         </section>
     );

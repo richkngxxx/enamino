@@ -90,10 +90,10 @@ export default function Footer() {
             <div className={style.social}>
                 <p className={style.socialTitle}>{t("footer.followUs")}</p>
                 <div className={style.socialIcons}>
-                    <a href={currentSocial.instagram} target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
+                    <a href={currentSocial.instagram} target="_blank" rel="noopener noreferrer" className={style.socialIcon} aria-label="Instagram">
                         <FaInstagram />
                     </a>
-                    <a href={currentSocial.facebook} target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
+                    <a href={currentSocial.facebook} target="_blank" rel="noopener noreferrer" className={style.socialIcon} aria-label="Facebook">
                         <FaFacebook />
                     </a>
                     <a
@@ -101,6 +101,7 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={style.socialIcon}
+                        aria-label="WhatsApp"
                     >
                         <FaWhatsapp />
                     </a>

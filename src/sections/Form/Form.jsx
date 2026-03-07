@@ -75,6 +75,7 @@ export default function Form() {
                         className={style.formSectionInput}
                         onChange={(e) => handleChange(e)}
                         value={form.name}
+                        aria-label="Votre nom"
                     />
                 </div>
                 <div className={style.formSection}>
@@ -88,6 +89,7 @@ export default function Form() {
                         className={style.formSectionInput}
                         onChange={(e) => handleChange(e)}
                         value={form.email}
+                        aria-label="Votre email"
                     />
                 </div>
                 <div className={style.formSection}>
@@ -100,13 +102,15 @@ export default function Form() {
                         className={style.formSectionInput}
                         onChange={(e) => handleChange(e)}
                         value={form.message}
+                        aria-label="Votre message"
                     />
                 </div>
-                <input 
-                    type="submit" 
-                    value={isSubmitting ? "Envoi..." : t("contact.send")} 
-                    disabled={!canSubmit} 
-                    className={style.formSubmit} 
+                <input
+                    type="submit"
+                    value={isSubmitting ? "Envoi..." : t("contact.send")}
+                    disabled={!canSubmit}
+                    className={style.formSubmit}
+                    aria-label="Envoyer le message"
                 />
                 {confirmMessage === 200 && <p className={style.formMessageOk}>{t("contact.messageOk")}</p>}
                 {confirmMessage === 400 && <p className={style.formMessageBad}>{t("contact.messageBad")}</p>}

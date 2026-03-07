@@ -25,7 +25,7 @@ export default function Navbar() {
     };
 
     return (
-        <section className={style.container}>
+        <nav className={style.container} role="navigation">
             <Link to="/" className={style.logo} onClick={() => window.scrollTo(0, 0)}>
                 <img src={logo} alt="Enamino Logo" loading="lazy" />
             </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
                         <img src={usaFlag} alt="USA Flag" loading="lazy" />
                     </div>
                 )}
-                <select className={style.languageSelector} onChange={(e) => handleLanguage(e)}>
+                <select className={style.languageSelector} onChange={(e) => handleLanguage(e)} aria-label={t("navbar.selectLanguage")}>
                     <option value="" hidden>
                         {t("navbar.selectLanguage")}
                     </option>
@@ -84,6 +84,6 @@ export default function Navbar() {
                     <option value="en">{t("navbar.english")}</option>
                 </select>
             </div>
-        </section>
+        </nav>
     );
 }
