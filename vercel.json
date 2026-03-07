@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api|assets|icons|manifest\\.json|sw\\.js).*)",
+      "source": "/((?!api|assets|icons|manifest\\.json|sw\\.js|sitemap\\.xml|robots\\.txt).*)",
       "destination": "/index.html"
     }
   ],
