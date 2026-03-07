@@ -28,6 +28,16 @@ export default function ContactView() {
                 <link rel="alternate" hreflang="en" href="https://enamino.fr/contact" />
                 <link rel="alternate" hreflang="es" href="https://enamino.fr/contact" />
                 <link rel="alternate" hreflang="x-default" href="https://enamino.fr/contact" />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://enamino.fr/" },
+                            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://enamino.fr/contact" }
+                        ]
+                    })}
+                </script>
             </Helmet>
             <HeaderComponent image={headerImage} text={"Contact"} />
             <Form />

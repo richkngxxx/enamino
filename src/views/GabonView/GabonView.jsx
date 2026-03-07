@@ -29,6 +29,16 @@ export default function GabonView() {
                 <link rel="alternate" hreflang="en" href="https://enamino.fr/gabon" />
                 <link rel="alternate" hreflang="es" href="https://enamino.fr/gabon" />
                 <link rel="alternate" hreflang="x-default" href="https://enamino.fr/gabon" />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://enamino.fr/" },
+                            { "@type": "ListItem", "position": 2, "name": "Le Gabon", "item": "https://enamino.fr/gabon" }
+                        ]
+                    })}
+                </script>
             </Helmet>
             <HeaderComponent image={headerImage} text={t("gabonHeader")} />
             <Gabon />

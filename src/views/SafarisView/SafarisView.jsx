@@ -27,6 +27,16 @@ export default function SafarisView() {
                 <link rel="alternate" hreflang="en" href="https://enamino.fr/safaris" />
                 <link rel="alternate" hreflang="es" href="https://enamino.fr/safaris" />
                 <link rel="alternate" hreflang="x-default" href="https://enamino.fr/safaris" />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://enamino.fr/" },
+                            { "@type": "ListItem", "position": 2, "name": "Safaris", "item": "https://enamino.fr/safaris" }
+                        ]
+                    })}
+                </script>
             </Helmet>
             <HeaderComponent image={headerImage} text={t("safarisHeader")} />
             <Loango />
