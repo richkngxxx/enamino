@@ -1,16 +1,16 @@
 import style from "./Footer.module.css";
 import { useTranslation } from "react-i18next";
-import logo from "../../assets/images/logo-complete.png";
+
 import { FaHome, FaUser, FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 
 export default function Footer() {
     const [t, i18n] = useTranslation("global");
-    
+
     // Get current language
     const currentLang = i18n.language;
-    
+
     // Social media links based on language
     const socialLinks = {
         // Spanish - Nathalie's social media
@@ -29,13 +29,13 @@ export default function Footer() {
             facebook: "https://www.facebook.com/share/1CzzPiSjoy/"
         }
     };
-    
+
     const currentSocial = socialLinks[currentLang] || socialLinks.en;
 
     return (
         <section className={style.container}>
             <div className={style.logo}>
-                <img src={logo} alt="Enamino Logo" loading="lazy" />
+                <img src="/images/logo-complete.png" alt="Enamino Logo" loading="lazy" />
             </div>
             <ul className={style.data}>
                 <li className={style.dataElement}>
@@ -96,9 +96,9 @@ export default function Footer() {
                     <a href={currentSocial.facebook} target="_blank" rel="noopener noreferrer" className={style.socialIcon}>
                         <FaFacebook />
                     </a>
-                    <a 
+                    <a
                         href={`https://wa.me/34686067814?text=${encodeURIComponent(t("footer.whatsappMessage"))}`}
-                        target="_blank" 
+                        target="_blank"
                         rel="noopener noreferrer"
                         className={style.socialIcon}
                     >
