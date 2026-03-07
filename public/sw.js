@@ -1,4 +1,4 @@
-const CACHE_NAME = 'enamino-v2';
+const CACHE_NAME = 'enamino-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -47,12 +47,12 @@ self.addEventListener('fetch', (event) => {
   if (event.request.url.startsWith('chrome-extension://')) {
     return;
   }
-  
+
   // Skip non-GET requests
   if (event.request.method !== 'GET') {
     return;
   }
-  
+
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
