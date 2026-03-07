@@ -11,6 +11,8 @@ const GabonView = React.lazy(() => import('./views/GabonView/GabonView'));
 const TravelersView = React.lazy(() => import('./views/TravelersView/TravelersView'));
 const ContactView = React.lazy(() => import('./views/ContactView/ContactView'));
 
+import { Analytics } from '@vercel/analytics/react';
+
 export default function App() {
     return (
         <Router>
@@ -31,6 +33,7 @@ export default function App() {
                 </React.Suspense>
                 <Footer />
                 <ScrollToTop />
+                <Analytics />
             </div>
         </Router>
     );
