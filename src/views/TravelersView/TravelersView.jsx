@@ -24,6 +24,10 @@ export default function TravelersView() {
                 <meta property="og:description" content="Tout ce qu'il faut savoir avant votre séjour à l'Eco-Village d'Enamino : bagages, formalités, vaccinations et conseils pratiques." />
                 <meta property="og:url" content="https://enamino.fr/travelers" />
                 <link rel="canonical" href="https://enamino.fr/travelers" />
+                <link rel="alternate" hreflang="fr" href="https://enamino.fr/travelers" />
+                <link rel="alternate" hreflang="en" href="https://enamino.fr/travelers" />
+                <link rel="alternate" hreflang="es" href="https://enamino.fr/travelers" />
+                <link rel="alternate" hreflang="x-default" href="https://enamino.fr/travelers" />
             </Helmet>
             <HeaderComponent image={headerImage} text={t("travelersHeader")} />
             <Bag />

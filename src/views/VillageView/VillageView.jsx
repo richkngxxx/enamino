@@ -25,6 +25,10 @@ export default function VillageView() {
                 <meta property="og:description" content="Découvrez l'Eco-Village d'Enamino, un camp éco-touristique de charme situé dans le Parc National de Loango au Gabon. Safari, biodiversité exceptionnelle et immersion en pleine nature." />
                 <meta property="og:url" content="https://enamino.fr/" />
                 <link rel="canonical" href="https://enamino.fr/" />
+                <link rel="alternate" hreflang="fr" href="https://enamino.fr/" />
+                <link rel="alternate" hreflang="en" href="https://enamino.fr/" />
+                <link rel="alternate" hreflang="es" href="https://enamino.fr/" />
+                <link rel="alternate" hreflang="x-default" href="https://enamino.fr/" />
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",

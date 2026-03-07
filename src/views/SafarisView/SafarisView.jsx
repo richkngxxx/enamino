@@ -23,6 +23,10 @@ export default function SafarisView() {
                 <meta property="og:description" content="Découvrez nos safaris en forêt, lagune et savane au cœur du Parc National de Loango. Observation de gorilles, éléphants, baleines et plus." />
                 <meta property="og:url" content="https://enamino.fr/safaris" />
                 <link rel="canonical" href="https://enamino.fr/safaris" />
+                <link rel="alternate" hreflang="fr" href="https://enamino.fr/safaris" />
+                <link rel="alternate" hreflang="en" href="https://enamino.fr/safaris" />
+                <link rel="alternate" hreflang="es" href="https://enamino.fr/safaris" />
+                <link rel="alternate" hreflang="x-default" href="https://enamino.fr/safaris" />
             </Helmet>
             <HeaderComponent image={headerImage} text={t("safarisHeader")} />
             <Loango />

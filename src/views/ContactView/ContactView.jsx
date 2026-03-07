@@ -24,6 +24,10 @@ export default function ContactView() {
                 <meta property="og:description" content="Contactez-nous pour réserver votre séjour éco-touristique au Parc National de Loango, Gabon. Formulaire de contact et coordonnées." />
                 <meta property="og:url" content="https://enamino.fr/contact" />
                 <link rel="canonical" href="https://enamino.fr/contact" />
+                <link rel="alternate" hreflang="fr" href="https://enamino.fr/contact" />
+                <link rel="alternate" hreflang="en" href="https://enamino.fr/contact" />
+                <link rel="alternate" hreflang="es" href="https://enamino.fr/contact" />
+                <link rel="alternate" hreflang="x-default" href="https://enamino.fr/contact" />
             </Helmet>
             <HeaderComponent image={headerImage} text={"Contact"} />
             <Form />

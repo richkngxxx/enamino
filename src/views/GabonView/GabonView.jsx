@@ -25,6 +25,10 @@ export default function GabonView() {
                 <meta property="og:description" content="Explorez le Gabon, ses parcs nationaux, sa biodiversité exceptionnelle et ses formalités de voyage. Guide pratique pour préparer votre séjour." />
                 <meta property="og:url" content="https://enamino.fr/gabon" />
                 <link rel="canonical" href="https://enamino.fr/gabon" />
+                <link rel="alternate" hreflang="fr" href="https://enamino.fr/gabon" />
+                <link rel="alternate" hreflang="en" href="https://enamino.fr/gabon" />
+                <link rel="alternate" hreflang="es" href="https://enamino.fr/gabon" />
+                <link rel="alternate" hreflang="x-default" href="https://enamino.fr/gabon" />
             </Helmet>
             <HeaderComponent image={headerImage} text={t("gabonHeader")} />
             <Gabon />
